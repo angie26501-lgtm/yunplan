@@ -1,1 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>50+ 家庭財務盤點｜5 分鐘自我檢核</title>
+<meta name="description" content="五個問題，看看你家的財務地基穩不穩。房子登記、貸款、可動用現金、失能與離世的應變、重新開始的能力。財顧芸提供，免費、不需留下個資即可看結果。">
+<meta name="theme-color" content="#F7F2E7">
+<link rel="canonical" href="https://yunplan.tw/tools/family-checkup.html">
+<meta property="og:url" content="https://yunplan.tw/tools/family-checkup.html">
+<meta property="og:title" content="50+ 家庭財務盤點｜5 分鐘自我檢核">
+<meta property="og:description" content="五個問題，看看你家的財務地基穩不穩。免費，不需留下個資就能看結果。">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_TW">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
 
+<!-- ═══════════════════════════════════════════════
+     ★ 設定區：只要改這裡 ★
+     ═══════════════════════════════════════════════ -->
+<script>
+const CFG = {
+  lineUrl : 'https://lin.ee/pajsB7X',   // LINE@ 官方帳號
+  // ↓ 部署 Apps Script 後，把網址貼進來（留空則不送出，工具照常運作）
+  sheetApi: '',
+  columnUrl: '../'                       // 專欄首頁
+};
+</script>
+
+<style>
+:root{
+  --gold:#C2A24E; --gold2:#9E7A34; --gold-pale:#FBF6EC;
+  --ink:#4A3B2A; --ink-soft:rgba(74,59,42,.78); --ink-mute:rgba(74,59,42,.45);
+  --bg:#F7F2E7; --card:#FFFDF9; --band:#F1EADB;
+  --bark:#8A6A44; --green:#5C8A66; --coral:#BC6A48;
+  --line:rgba(150,120,70,.20); --line2:rgba(150,120,70,.42); --r:6px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:'Noto Sans TC',sans-serif;
+  font-size:18px;line-height:1.95;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--gold2);outline-offset:2px}
+.wrap{max-width:640px;margin:0 auto;padding:0 20px}
+
+.top{background:#FBF7EF;border-bottom:1px solid var(--line)}
+.top-in{max-width:640px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:12px}
+.logo{font-family:'Noto Serif TC',serif;font-weight:900;font-size:18px;line-height:1.15}
+.logo small{display:block;font-family:'Noto Sans TC',sans-serif;font-size:9.5px;letter-spacing:3px;
+  color:var(--gold2);font-weight:400;margin-top:3px}
+.top a.back{margin-left:auto;font-size:14px;color:var(--ink-mute)}
+
+/* 進度 */
+.bar{height:4px;background:var(--band);position:sticky;top:0;z-index:40}
+.bar i{display:block;height:100%;background:var(--gold);width:0;transition:width .3s}
+
+.stage{padding:34px 0 70px}
+.hidden{display:none!important}
+
+/* 開場 */
+.intro h1{font-family:'Noto Serif TC',serif;font-weight:900;font-size:clamp(25px,5.6vw,34px);line-height:1.5}
+.intro .eyebrow{font-size:11.5px;letter-spacing:5px;color:var(--gold2);margin-bottom:16px}
+.intro p{margin-top:20px;color:var(--ink-soft);font-size:16.5px}
+.facts{margin:26px 0 0;padding:0;list-style:none}
+.facts li{position:relative;padding:8px 0 8px 26px;font-size:16px;color:var(--ink-soft)}
+.facts li::before{content:'';position:absolute;left:4px;top:19px;width:7px;height:7px;
+  border-radius:50%;background:var(--gold)}
+
+/* 題目 */
+.qno{font-size:12px;letter-spacing:4px;color:var(--gold2);margin-bottom:14px}
+.qt{font-family:'Noto Serif TC',serif;font-weight:900;font-size:clamp(21px,4.6vw,27px);line-height:1.6}
+.qhint{margin-top:14px;font-size:15.5px;color:var(--ink-mute);line-height:1.85}
+.opts{margin-top:28px;display:flex;flex-direction:column;gap:12px}
+.opt{
+  background:var(--card);border:1.5px solid var(--line);border-radius:var(--r);
+  padding:19px 20px;font-size:17px;line-height:1.7;text-align:left;color:var(--ink);
+  transition:.15s;width:100%;display:flex;align-items:flex-start;gap:13px;
+}
+.opt:hover{border-color:var(--gold);background:var(--gold-pale)}
+.opt.sel{border-color:var(--gold2);background:var(--gold-pale);box-shadow:inset 0 0 0 1px var(--gold2)}
+.dot{width:22px;height:22px;border-radius:50%;border:2px solid var(--line2);flex-shrink:0;margin-top:5px;
+  display:flex;align-items:center;justify-content:center;transition:.15s}
+.opt.sel .dot{border-color:var(--gold2);background:var(--gold2)}
+.opt.sel .dot::after{content:'';width:8px;height:8px;border-radius:50%;background:#FFFDF9}
+
+.navrow{display:flex;gap:12px;align-items:center;margin-top:30px}
+.lnk{background:none;border:none;font-size:15px;color:var(--ink-mute);padding:10px 4px}
+.lnk:hover{color:var(--gold2)}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  background:var(--gold2);color:#FFFDF9;border:none;padding:16px 30px;border-radius:var(--r);
+  font-family:'Noto Serif TC',serif;font-size:17px;font-weight:700;letter-spacing:1px;transition:.15s;
+}
+.btn:hover{background:var(--bark)}
+.btn:disabled{opacity:.35;cursor:not-allowed}
+.btn.line{background:#06C755;color:#fff}
+.btn.line:hover{background:#05a948}
+.btn.ghost{background:none;border:1.5px solid var(--line2);color:var(--gold2)}
+.btn.ghost:hover{background:rgba(194,162,78,.1)}
+.btn.full{width:100%}
+
+/* 結果 */
+.verdict{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--vc,var(--gold));
+  border-radius:var(--r);padding:28px 24px;margin-bottom:8px}
+.vlabel{font-size:11.5px;letter-spacing:4px;color:var(--gold2);margin-bottom:12px}
+.vtitle{font-family:'Noto Serif TC',serif;font-weight:900;font-size:clamp(22px,4.6vw,28px);line-height:1.5}
+.vscore{margin-top:16px;font-size:15px;color:var(--ink-mute)}
+.vscore b{font-family:'Noto Serif TC',serif;font-size:26px;color:var(--vc,var(--gold2));font-weight:900}
+.vtext{margin-top:16px;font-size:16.5px;color:var(--ink-soft)}
+
+.rsec{margin-top:38px}
+.rsec h3{font-family:'Noto Serif TC',serif;font-weight:900;font-size:20px;margin-bottom:6px}
+.rsec .sub{font-size:14.5px;color:var(--ink-mute);margin-bottom:18px}
+
+.ritem{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:20px 22px;margin-bottom:12px;border-left:4px solid var(--ic)}
+.ritem[data-lv="ok"]{--ic:#5C8A66}
+.ritem[data-lv="mid"]{--ic:#C2A24E}
+.ritem[data-lv="gap"]{--ic:#BC6A48}
+.rhead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.rtag{font-size:11px;letter-spacing:2px;padding:2px 9px;border-radius:99px;border:1px solid var(--ic);color:var(--ic);flex-shrink:0}
+.rq{font-family:'Noto Serif TC',serif;font-weight:700;font-size:16.5px;line-height:1.6}
+.rmsg{margin-top:10px;font-size:15.5px;color:var(--ink-soft);line-height:1.85}
+
+.first{background:var(--band);border:1px solid var(--line);border-radius:var(--r);padding:26px 24px;margin-top:34px}
+.first .lb{font-size:11.5px;letter-spacing:4px;color:var(--gold2);margin-bottom:12px}
+.first h4{font-family:'Noto Serif TC',serif;font-weight:900;font-size:19px;line-height:1.6}
+.first p{margin-top:12px;font-size:16px;color:var(--ink-soft)}
+
+.handoff{background:var(--card);border:1px solid var(--line2);border-radius:var(--r);padding:28px 24px;margin-top:34px}
+.handoff h3{font-family:'Noto Serif TC',serif;font-weight:900;font-size:20px;line-height:1.55}
+.handoff p{margin-top:12px;font-size:16px;color:var(--ink-soft)}
+.handoff .btnrow{display:flex;flex-direction:column;gap:11px;margin-top:22px}
+.tiny{margin-top:16px;font-size:13px;line-height:1.85;color:var(--ink-mute)}
+
+.mailbox{margin-top:22px;padding-top:20px;border-top:1px dashed var(--line2)}
+.mailbox label{display:block;font-size:14.5px;color:var(--ink-soft);margin-bottom:9px}
+.mailbox input{width:100%;padding:14px 15px;font-size:16.5px;font-family:inherit;color:var(--ink);
+  background:var(--bg);border:1.5px solid var(--line);border-radius:var(--r)}
+.mailbox input:focus{border-color:var(--gold2);outline:none}
+.agree{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:14px;color:var(--ink-mute);line-height:1.75}
+.agree input{width:20px;height:20px;flex-shrink:0;margin-top:3px;accent-color:var(--gold2)}
+.msg{margin-top:12px;font-size:14.5px;padding:11px 14px;border-radius:var(--r);display:none}
+.msg.ok{display:block;background:rgba(92,138,102,.12);color:#3F7D58}
+.msg.err{display:block;background:rgba(188,106,72,.12);color:var(--coral)}
+
+.disc{margin-top:40px;padding-top:22px;border-top:1px solid var(--line);
+  font-size:13px;line-height:1.9;color:var(--ink-mute)}
+
+@media (max-width:640px){
+  body{font-size:17px}
+  .wrap{padding:0 18px}
+  .opt{padding:17px 17px;font-size:16.5px}
+  .btn{width:100%;padding:16px 20px}
+  .navrow{flex-wrap:wrap}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <a class="logo" href="../">50+ 人生選擇權<small>財顧芸．陳芸琪</small></a>
+    <a class="back" href="../">← 回首頁</a>
+  </div>
+</header>
+<div class="bar"><i id="bar"></i></div>
+
+<main class="stage">
+
+<!-- ══ 開場 ══ -->
+<section class="wrap intro" id="scIntro">
+  <div class="eyebrow">財顧芸．自我檢核</div>
+  <h1>50+ 家庭財務盤點<br>先問自己這 5 件事</h1>
+  <p>這不是考試，沒有標準答案。只是把很多家庭平常沒機會講清楚的事，一次問過一遍。</p>
+  <ul class="facts">
+    <li>五題，大概三分鐘</li>
+    <li>看結果不用留任何個資</li>
+    <li>不會問你的收入、存款或資產金額</li>
+  </ul>
+  <div class="navrow">
+    <button class="btn" id="btnStart">開始檢核</button>
+  </div>
+</section>
+
+<!-- ══ 題目 ══ -->
+<section class="wrap hidden" id="scQuiz">
+  <div class="qno" id="qno"></div>
+  <h2 class="qt" id="qt"></h2>
+  <p class="qhint" id="qhint"></p>
+  <div class="opts" id="opts"></div>
+  <div class="navrow">
+    <button class="lnk hidden" id="btnPrev">← 上一題</button>
+  </div>
+</section>
+
+<!-- ══ 結果 ══ -->
+<section class="wrap hidden" id="scResult">
+
+  <div class="verdict" id="verdict">
+    <div class="vlabel">檢核結果</div>
+    <div class="vtitle" id="vtitle"></div>
+    <div class="vscore">清晰度 <b id="vnum"></b> / 10</div>
+    <p class="vtext" id="vtext"></p>
+  </div>
+
+  <div class="rsec">
+    <h3>逐題回饋</h3>
+    <p class="sub">綠色是穩的，黃色是知道但不夠細，橘色是目前的缺口。</p>
+    <div id="rlist"></div>
+  </div>
+
+  <div class="first" id="firstBox">
+    <div class="lb">如果只做一件事</div>
+    <h4 id="firstT"></h4>
+    <p id="firstP"></p>
+  </div>
+
+  <div class="handoff">
+    <h3>想知道這些缺口該怎麼補？</h3>
+    <p>按下面的按鈕，你的檢核結果會自動複製起來，貼給我就好。我看過之後會告訴你，以你家的情況，哪一項最該先處理。</p>
+    <div class="btnrow">
+      <button class="btn line full" id="btnLine">複製結果並開啟 LINE</button>
+      <button class="btn ghost full" id="btnCopy">只複製結果</button>
+    </div>
+    <p class="tiny">不會自動送出任何資料。你貼上之後才會傳給我。</p>
+
+    <div class="mailbox">
+      <label for="mail">或者，留下 Email 收完整的《家庭財務盤點表》</label>
+      <input type="email" id="mail" placeholder="your@email.com" autocomplete="email" inputmode="email">
+      <label class="agree">
+        <input type="checkbox" id="agree">
+        <span>我同意財顧芸保存這份檢核結果與聯絡方式，作為後續提供資料與服務聯繫之用。</span>
+      </label>
+      <button class="btn ghost full" id="btnMail" style="margin-top:14px" disabled>送出</button>
+      <div class="msg" id="mailMsg"></div>
+    </div>
+  </div>
+
+  <div class="navrow">
+    <button class="lnk" id="btnAgain">重新檢核一次</button>
+  </div>
+
+  <p class="disc">
+    本檢核為財務規劃觀念之自我提醒，不構成法律、稅務或個別投資建議。實際涉及產權、繼承、稅負之個案，請諮詢律師、地政士或會計師。
+  </p>
+</section>
+
+</main>
+
+<script>
+/* ══════════ 題目資料 ══════════
+   score: 2=清楚 1=大概 0=不確定
+   ok/mid/gap: 對應三種分數的回饋文字
+   ════════════════════════════ */
+const Q = [
+  {
+    tag:'走',
+    t:'我家的房子，登記在誰的名下？',
+    hint:'包含自住的房子，以及其他不動產。',
+    o:[
+      {label:'很清楚，權狀我自己看過', s:2},
+      {label:'知道大概，但沒真的看過權狀', s:1},
+      {label:'不太確定', s:0}
+    ],
+    ok:'這一項是穩的。知道登記在誰名下，是所有後續安排的起點。',
+    mid:'知道大概就好一半了。找個時間把權狀拿出來看一次，確認登記名義與持分比例，很多誤會是在這一步發現的。',
+    gap:'這是最值得先補的一項。房子通常是家庭最大的資產，如果連登記名義都不確定，後面的退休、傳承安排都會建立在猜測上。'
+  },
+  {
+    tag:'老',
+    t:'家裡的貸款還剩多少、由誰負責繳？',
+    hint:'房貸、信貸、車貸，還有替別人作保的部分。',
+    o:[
+      {label:'餘額和繳款人我都清楚', s:2},
+      {label:'知道有貸款，但不確定還剩多少', s:1},
+      {label:'不太確定', s:0}
+    ],
+    ok:'很好。貸款餘額直接決定退休後每個月真正能用的錢有多少。',
+    mid:'建議查一次餘額和剩餘年限。很多人退休才發現房貸還要繳到七十歲，那時候調整空間就小了。',
+    gap:'貸款是會吃掉退休現金流的。而且房屋所有權人和貸款債務人可以是不同的人——這一點很多夫妻是在出事之後才知道。'
+  },
+  {
+    tag:'離',
+    t:'我有沒有一筆自己可以隨時動用的現金？',
+    hint:'指自己名下、不需要跟任何人商量就能動用的錢。',
+    o:[
+      {label:'有，大約三個月生活費以上', s:2},
+      {label:'有，但不到三個月生活費', s:1},
+      {label:'目前沒有', s:0}
+    ],
+    ok:'這就是「人生轉身金」的核心。有這筆錢，遇到事情時你說的是「我這邊撐得住」。',
+    mid:'已經有起頭了。先把目標訂在三個月生活費，之後再談投資和退休配置，順序才不會亂。',
+    gap:'這一項值得優先處理，而且門檻沒有想像中高。先開一個自己的帳戶，每月固定放一點進去，三個月生活費是第一個里程碑。'
+  },
+  {
+    tag:'病',
+    t:'如果有一方失能或離世，另一方有辦法處理這些資產嗎？',
+    hint:'帳戶在哪裡、保單放哪裡、投資在哪家、密碼誰知道。',
+    o:[
+      {label:'可以，資料都有整理過', s:2},
+      {label:'大概可以，但要花很久去找', s:1},
+      {label:'恐怕沒辦法', s:0}
+    ],
+    ok:'這一項多數家庭做不到，你做到了。這在真的發生事情時，差別非常大。',
+    mid:'「找得到但要很久」在急用錢的時候是很吃力的。做一份家庭財務清單，一張 A4 就夠，放在兩個人都知道的地方。',
+    gap:'這是比離婚更常發生、卻更少人準備的情況。尤其如果家裡是一個人在管錢，另一個人完全不碰，風險會集中在同一個人身上。'
+  },
+  {
+    tag:'離',
+    t:'如果人生關係改變，我還有重新開始的能力嗎？',
+    hint:'不是在假設什麼，是在確認自己還有沒有選擇權。',
+    o:[
+      {label:'有，我知道自己可以怎麼安排', s:2},
+      {label:'沒想過，不太確定', s:1},
+      {label:'應該沒有辦法', s:0}
+    ],
+    ok:'那你現在的每一個選擇，都是真的選擇，而不是沒有別的路。',
+    mid:'沒想過很正常，多數人不會主動想這題。但先想過一次，跟事情發生時才第一次想，狀態會完全不一樣。',
+    gap:'這題不是要你做什麼決定。真正的重點是：留下來，最好是因為你選擇留下來，不是因為你沒有別的辦法。'
+  }
+];
+
+const LV = ['gap','mid','ok'];
+let cur = 0;
+const ans = new Array(Q.length).fill(null);
+
+const $ = id => document.getElementById(id);
+
+/* ── 流程 ── */
+$('btnStart').onclick = () => { cur = 0; show('quiz'); render(); };
+$('btnPrev').onclick  = () => { if(cur>0){ cur--; render(); } };
+$('btnAgain').onclick = () => { ans.fill(null); cur = 0; show('intro'); bar(0); window.scrollTo(0,0); };
+
+function show(v){
+  $('scIntro').classList.toggle('hidden', v!=='intro');
+  $('scQuiz').classList.toggle('hidden',  v!=='quiz');
+  $('scResult').classList.toggle('hidden',v!=='result');
+}
+function bar(p){ $('bar').style.width = p + '%'; }
+
+function render(){
+  const q = Q[cur];
+  bar(Math.round(cur / Q.length * 100));
+  $('qno').textContent = '第 ' + (cur+1) + ' 題　共 ' + Q.length + ' 題';
+  $('qt').textContent = q.t;
+  $('qhint').textContent = q.hint;
+  $('btnPrev').classList.toggle('hidden', cur === 0);
+
+  const box = $('opts');
+  box.innerHTML = '';
+  q.o.forEach((o, i) => {
+    const b = document.createElement('button');
+    b.className = 'opt' + (ans[cur] === i ? ' sel' : '');
+    b.innerHTML = '<span class="dot"></span><span>' + o.label + '</span>';
+    b.onclick = () => pick(i);
+    box.appendChild(b);
+  });
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function pick(i){
+  ans[cur] = i;
+  document.querySelectorAll('.opt').forEach((el,k)=>el.classList.toggle('sel',k===i));
+  setTimeout(()=>{
+    if(cur < Q.length - 1){ cur++; render(); }
+    else { bar(100); result(); }
+  }, 260);
+}
+
+/* ── 結果 ── */
+function score(){
+  return ans.reduce((sum, a, i) => sum + (a === null ? 0 : Q[i].o[a].s), 0);
+}
+
+function result(){
+  const sc = score();
+  const v = $('verdict');
+
+  let title, text, color;
+  if(sc >= 8){
+    title = '你家的財務地基是穩的';
+    text  = '五題裡多數你都答得出來，這在同齡家庭裡不算普遍。接下來可以往前一步，談的不再是「會不會出事」，而是退休現金流怎麼配、資產怎麼安排傳承。';
+    color = '#5C8A66';
+  } else if(sc >= 4){
+    title = '大方向有，細節有幾個空格';
+    text  = '你對家裡的狀況不是完全不清楚，但有幾項停在「大概知道」。這個階段最有效的做法不是急著買什麼，而是先把資料補齊——很多缺口在整理的過程中就會自己浮出來。';
+    color = '#C2A24E';
+  } else {
+    title = '值得從頭好好盤一次';
+    text  = '有好幾項目前是空白的。這不是什麼壞消息——大部分家庭都是這樣，只是沒有人提醒過要看。而且這幾項都不難補，多數只要花一個週末把資料找齊就有八成。';
+    color = '#BC6A48';
+  }
+
+  v.style.setProperty('--vc', color);
+  $('vtitle').textContent = title;
+  $('vnum').textContent = sc;
+  $('vtext').textContent = text;
+
+  const list = $('rlist');
+  list.innerHTML = '';
+  Q.forEach((q, i) => {
+    const s = ans[i] === null ? 0 : q.o[ans[i]].s;
+    const lv = LV[s];
+    const d = document.createElement('div');
+    d.className = 'ritem';
+    d.setAttribute('data-lv', lv);
+    d.innerHTML =
+      '<div class="rhead"><span class="rtag">' + q.tag + '</span>' +
+      '<span class="rq">' + q.t + '</span></div>' +
+      '<p class="rmsg">' + q[lv] + '</p>';
+    list.appendChild(d);
+  });
+
+  // 最該先補的一項：分數最低者，同分取排序在前的
+  let worst = 0, min = 9;
+  Q.forEach((q, i) => {
+    const s = ans[i] === null ? 0 : q.o[ans[i]].s;
+    if(s < min){ min = s; worst = i; }
+  });
+  if(min === 2){
+    $('firstT').textContent = '你目前沒有明顯缺口';
+    $('firstP').textContent = '那下一步就不是補洞，而是往前推進：把每個月真正進得來的現金流算出來，看退休後撐不撐得住想過的生活。';
+  } else {
+    $('firstT').textContent = Q[worst].t;
+    $('firstP').textContent = Q[worst][LV[min]];
+  }
+
+  show('result');
+  window.scrollTo({top:0, behavior:'smooth'});
+  send('view');   // 匿名記錄一次完成（不含聯絡方式）
+}
+
+/* ── 摘要文字 ── */
+function summary(){
+  let t = '【50+ 家庭財務盤點｜我的檢核結果】\n\n';
+  t += '清晰度：' + score() + ' / 10\n\n';
+  Q.forEach((q, i) => {
+    const a = ans[i];
+    t += (i+1) + '. ' + q.t + '\n　→ ' + (a === null ? '未作答' : q.o[a].label) + '\n';
+  });
+  t += '\n芸，我做完檢核了，想請你幫我看一下該從哪裡開始。';
+  return t;
+}
+
+/* ── 複製 ── */
+function copy(text){
+  if(navigator.clipboard && window.isSecureContext){
+    return navigator.clipboard.writeText(text).catch(() => fallback(text));
+  }
+  return Promise.resolve(fallback(text));
+}
+function fallback(text){
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.cssText = 'position:fixed;opacity:0;top:0';
+  document.body.appendChild(ta);
+  ta.select();
+  try{ document.execCommand('copy'); }catch(e){}
+  ta.remove();
+}
+
+$('btnLine').onclick = () => {
+  copy(summary()).then(() => {
+    send('line');
+    alert('結果已複製！接著會開啟 LINE，貼上傳送給芸就可以了。');
+    window.open(CFG.lineUrl, '_blank');
+  });
+};
+$('btnCopy').onclick = () => {
+  copy(summary()).then(() => {
+    const b = $('btnCopy');
+    b.textContent = '已複製 ✓';
+    setTimeout(() => b.textContent = '只複製結果', 2200);
+  });
+};
+
+/* ── Email ── */
+const mail = $('mail'), agree = $('agree'), btnMail = $('btnMail');
+function checkMail(){
+  const ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail.value.trim()) && agree.checked;
+  btnMail.disabled = !ok;
+}
+mail.oninput = checkMail;
+agree.onchange = checkMail;
+
+btnMail.onclick = () => {
+  const m = $('mailMsg');
+  btnMail.disabled = true;
+  btnMail.textContent = '送出中…';
+  send('mail', mail.value.trim()).then(() => {
+    m.className = 'msg ok';
+    m.textContent = '收到了，我會把盤點表寄給你。';
+    btnMail.textContent = '已送出 ✓';
+  }).catch(() => {
+    m.className = 'msg err';
+    m.textContent = '送出失敗，可以改用上面的 LINE 按鈕，一樣可以收到。';
+    btnMail.textContent = '送出';
+    btnMail.disabled = false;
+  });
+};
+
+/* ── 送到 Google Sheet ── */
+function send(kind, contact){
+  if(!CFG.sheetApi) return Promise.resolve();
+  const fd = new FormData();
+  fd.append('kind', kind);                       // view / line / mail
+  fd.append('score', score());
+  fd.append('answers', ans.map((a,i) => a === null ? '-' : Q[i].o[a].s).join(','));
+  fd.append('labels', ans.map((a,i) => a === null ? '未作答' : Q[i].o[a].label).join(' ｜ '));
+  fd.append('contact', contact || '');
+  fd.append('ts', new Date().toISOString());
+  return fetch(CFG.sheetApi, { method:'POST', mode:'no-cors', body: fd });
+}
+</script>
+</body>
+</html>
