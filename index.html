@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>50+ 人生選擇權｜人生改變時，你還有多少選擇</title>
+<meta name="description" content="寫給五十歲以後的家庭。從離、病、老、走四個人生轉彎，談退休現金流、熟齡女性的財務自主、長照安排與家族傳承。含宜蘭長照申請指引與五分鐘家庭財務檢核。">
+<meta name="theme-color" content="#F7F2E7">
+<link rel="canonical" href="https://yunplan.tw/">
+<meta property="og:url" content="https://yunplan.tw/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="50+ 人生選擇權｜人生改變時，你還有多少選擇">
+<meta property="og:description" content="婚姻會變、健康會變、家庭會變。好的財務規劃，是讓你始終有選擇。">
+<meta property="og:locale" content="zh_TW">
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --gold:#C2A24E; --gold2:#9E7A34; --gold-pale:#FBF6EC;
+  --ink:#4A3B2A; --ink-soft:rgba(74,59,42,.72); --ink-mute:rgba(74,59,42,.45);
+  --bg:#F7F2E7; --card:#FFFDF9; --band:#F1EADB;
+  --bark:#8A6A44; --green:#5C8A66; --coral:#BC6A48;
+  --line:rgba(150,120,70,.20); --line2:rgba(150,120,70,.42);
+  --r:5px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:'Noto Sans TC',sans-serif;
+  font-size:17px;line-height:1.9;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+
+/* ── 頁首 ── */
+.top{background:#FBF7EF;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.top-in{max-width:960px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.logo{font-family:'Noto Serif TC',serif;font-weight:900;font-size:19px;line-height:1.15;flex-shrink:0}
+.logo small{display:block;font-family:'Noto Sans TC',sans-serif;font-size:9.5px;letter-spacing:3px;
+  color:var(--gold2);font-weight:400;margin-top:3px}
+nav{display:flex;gap:2px;flex-wrap:wrap;margin-left:auto}
+nav a{padding:7px 12px;font-size:14.5px;color:var(--ink-mute);border-radius:var(--r);transition:.15s}
+nav a:hover{color:var(--gold2);background:rgba(194,162,78,.09)}
+nav a.on{color:var(--gold2);font-weight:500}
+
+/* ── HERO ── */
+.hero{padding:64px 0 52px;border-bottom:1px solid var(--line)}
+.kicker{font-size:11.5px;letter-spacing:5px;color:var(--gold2);margin-bottom:20px}
+.hero h1{
+  font-family:'Noto Serif TC',serif;font-weight:900;
+  font-size:clamp(27px,5.6vw,44px);line-height:1.42;letter-spacing:.5px;max-width:20em;
+}
+.hero h1 .mk{
+  color:var(--gold2);
+  background:linear-gradient(transparent 68%,rgba(194,162,78,.32) 68%,rgba(194,162,78,.32) 92%,transparent 92%);
+}
+.hero p{margin-top:24px;font-size:16.5px;color:var(--ink-soft);max-width:34em}
+.hero .by{margin-top:28px;font-size:13.5px;color:var(--ink-mute);letter-spacing:1px}
+
+/* ── 四情境（signature） ── */
+.stage{padding:56px 0 12px}
+.sec-h{margin-bottom:8px}
+.sec-h .eyebrow{font-size:11.5px;letter-spacing:4px;color:var(--gold2);margin-bottom:10px}
+.sec-h h2{font-family:'Noto Serif TC',serif;font-weight:900;font-size:clamp(21px,3.6vw,28px);line-height:1.4}
+.sec-h .lede{margin-top:12px;font-size:16px;color:var(--ink-soft);max-width:38em}
+
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:30px}
+.sc{
+  background:var(--card);border:1px solid var(--line);border-top:3px solid var(--sc);
+  border-radius:var(--r);padding:26px 22px 22px;display:flex;flex-direction:column;
+  transition:transform .18s,border-color .18s,box-shadow .18s;min-height:100%;
+}
+.sc:hover{transform:translateY(-3px);border-color:var(--line2);box-shadow:0 6px 20px rgba(120,95,55,.09)}
+.sc-word{font-family:'Noto Serif TC',serif;font-weight:900;font-size:44px;line-height:1;color:var(--sc)}
+.sc-when{margin-top:14px;font-size:15.5px;font-weight:500;color:var(--ink)}
+.sc-q{margin-top:12px;font-size:14.5px;line-height:1.85;color:var(--ink-soft);flex:1}
+.sc-go{margin-top:18px;font-size:13.5px;color:var(--gold2);letter-spacing:1px}
+.sc[data-s="li"]{--sc:#9E7A34}
+.sc[data-s="bing"]{--sc:#5C8A66}
+.sc[data-s="lao"]{--sc:#8A6A44}
+.sc[data-s="zou"]{--sc:#BC6A48}
+
+/* ── 三專區 ── */
+.zones{padding:56px 0}
+.zone{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:start;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:26px 24px;margin-top:14px;transition:.18s;
+}
+.zone:hover{border-color:var(--line2);background:var(--gold-pale)}
+.zone h3{font-family:'Noto Serif TC',serif;font-size:19.5px;font-weight:700;color:var(--gold2)}
+.zone .tag{
+  display:inline-block;font-size:11px;letter-spacing:2px;padding:3px 9px;border-radius:99px;
+  border:1px solid var(--line2);color:var(--ink-mute);margin-bottom:12px;
+}
+.zone p{margin-top:10px;font-size:15px;color:var(--ink-soft)}
+.zone .arr{font-size:13px;color:var(--gold);letter-spacing:1px;white-space:nowrap;padding-top:34px}
+.zone.hot{border-left:3px solid var(--green)}
+.zone.hot .tag{border-color:rgba(92,138,102,.5);color:var(--green)}
+
+/* ── 文章列表 ── */
+.list{padding:14px 0 56px}
+.item{
+  display:flex;gap:18px;align-items:baseline;
+  padding:18px 4px;border-bottom:1px solid rgba(150,120,70,.14);transition:.15s;
+}
+.item:hover{background:rgba(194,162,78,.06)}
+.item .no{font-family:'Noto Serif TC',serif;font-size:13px;color:var(--gold);letter-spacing:1px;
+  flex-shrink:0;width:52px;padding-top:3px}
+.item .body{flex:1;min-width:0}
+.item h4{font-family:'Noto Serif TC',serif;font-size:17.5px;font-weight:700;line-height:1.6}
+.item p{font-size:14.5px;color:var(--ink-mute);margin-top:5px;line-height:1.75}
+.item .st{font-size:12px;color:var(--ink-mute);flex-shrink:0;padding-top:5px}
+.item.soon{opacity:.52}
+.item.soon h4{font-weight:500}
+.item.live h4{color:var(--gold2)}
+
+/* ── 檢核 CTA ── */
+.checkup{
+  background:var(--band);border:1px solid var(--line);border-radius:var(--r);
+  padding:38px 30px;margin:8px 0 60px;
+}
+.checkup h3{font-family:'Noto Serif TC',serif;font-size:clamp(20px,3.4vw,25px);font-weight:900;line-height:1.45}
+.checkup .lede{margin-top:12px;font-size:15.5px;color:var(--ink-soft)}
+.qs{margin:24px 0 6px;padding:0;list-style:none;counter-reset:q}
+.qs li{
+  counter-increment:q;position:relative;padding:11px 0 11px 40px;
+  font-size:15.5px;line-height:1.8;border-bottom:1px dashed rgba(150,120,70,.28);
+}
+.qs li:last-child{border-bottom:none}
+.qs li::before{
+  content:counter(q);position:absolute;left:0;top:12px;
+  width:26px;height:26px;border-radius:50%;background:var(--gold);color:#FFFDF9;
+  font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;
+}
+.verdict{margin-top:16px;font-size:15px;color:var(--ink);font-weight:500;
+  padding:14px 16px;background:var(--card);border-left:3px solid var(--gold);border-radius:0 var(--r) var(--r) 0}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;margin-top:22px;
+  background:var(--gold2);color:#FFFDF9;padding:14px 28px;border-radius:var(--r);
+  font-family:'Noto Serif TC',serif;font-size:16px;font-weight:700;letter-spacing:1px;transition:.15s;
+}
+.btn:hover{background:var(--bark)}
+.btn.line{background:#06C755;color:#fff}
+.btn.ghost{background:none;border:1px solid var(--line2);color:var(--gold2)}
+.btn.ghost:hover{background:rgba(194,162,78,.1)}
+
+/* ── 關於 ── */
+.about{padding:0 0 56px}
+.about-box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:30px 26px}
+.about-box h3{font-family:'Noto Serif TC',serif;font-size:20px;font-weight:700;color:var(--gold2)}
+.about-box p{margin-top:12px;font-size:15.5px;color:var(--ink-soft)}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+
+/* ── 頁尾 ── */
+footer{background:#F1EADB;border-top:1px solid var(--line);padding:38px 0 44px;margin-top:20px}
+footer .cols{display:flex;gap:34px;flex-wrap:wrap;justify-content:space-between}
+footer h5{font-size:12px;letter-spacing:3px;color:var(--gold2);margin-bottom:12px}
+footer a{display:block;font-size:14.5px;color:var(--ink-soft);padding:4px 0}
+footer a:hover{color:var(--gold2)}
+.disc{margin-top:30px;padding-top:20px;border-top:1px solid var(--line);
+  font-size:12.5px;line-height:1.9;color:var(--ink-mute);max-width:52em}
+.copy{margin-top:16px;font-size:12px;color:var(--ink-mute)}
+
+@media (max-width:640px){
+  body{font-size:16.5px}
+  .top-in{padding:12px 16px;gap:10px}
+  nav{margin-left:0;width:100%}
+  nav a{padding:7px 10px;font-size:14px}
+  .wrap{padding:0 16px}
+  .hero{padding:44px 0 38px}
+  .zone{grid-template-columns:1fr}
+  .zone .arr{padding-top:0}
+  .item{gap:12px}
+  .item .no{width:44px;font-size:12px}
+  .checkup{padding:28px 20px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <a class="logo" href="./">50+ 人生選擇權<small>財顧芸．陳芸琪</small></a>
+    <nav>
+      <a class="on" href="./">首頁</a>
+      <a href="./50plus/">系列文章</a>
+      <a href="./ilan-care/">宜蘭長照</a>
+      <a href="./observe/">新聞觀察</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">寫給五十歲以後的家庭</div>
+    <h1>我們談的不只是錢，<br>而是人生改變時，<br>你還有多少<span class="mk">選擇</span>。</h1>
+    <p>婚姻會變、健康會變、家庭也會變。財務規劃真正在保護的，不是那筆錢，而是當這些事發生時，你還站得住、還能做決定。</p>
+    <div class="by">陳芸琪 Angie｜宜蘭．財務顧問／保險經紀人</div>
+  </div>
+</section>
+
+<section class="stage">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="eyebrow">從你現在的處境開始</div>
+      <h2>離、病、老、走：人生四種轉彎</h2>
+      <p class="lede">大部分的財務問題，不是因為不會理財，而是人生突然轉了一個彎。先找到你現在站在哪一個路口，再談規劃才有意義。</p>
+    </div>
+
+    <div class="grid4">
+      <a class="sc" data-s="li" href="./50plus/">
+        <div class="sc-word">離</div>
+        <div class="sc-when">關係改變的時候</div>
+        <p class="sc-q">結婚三十年，家裡有資產，但自己名下有什麼？如果人生重新選擇，我還有能力嗎？</p>
+        <div class="sc-go">看這一類文章 →</div>
+      </a>
+
+      <a class="sc" data-s="bing" href="./ilan-care/">
+        <div class="sc-word">病</div>
+        <div class="sc-when">生病或失能的時候</div>
+        <p class="sc-q">如果主要管錢的那個人失智了，誰知道帳戶在哪？長照的錢從哪裡出？</p>
+        <div class="sc-go">看這一類文章 →</div>
+      </a>
+
+      <a class="sc" data-s="lao" href="./50plus/">
+        <div class="sc-word">老</div>
+        <div class="sc-when">退休與照顧的時候</div>
+        <p class="sc-q">帳面上有一間房，退休就安全了嗎？每個月真正進得來的錢有多少？</p>
+        <div class="sc-go">看這一類文章 →</div>
+      </a>
+
+      <a class="sc" data-s="zou" href="./50plus/">
+        <div class="sc-word">走</div>
+        <div class="sc-when">一方先離開的時候</div>
+        <p class="sc-q">保單放在哪、貸款還剩多少、有哪些投資？如果只剩我一個人，我處理得來嗎？</p>
+        <div class="sc-go">看這一類文章 →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="zones">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="eyebrow">三個專區</div>
+      <h2>你想先看哪一種？</h2>
+    </div>
+
+    <a class="zone hot" href="./ilan-care/">
+      <div>
+        <span class="tag">宜蘭在地</span>
+        <h3>宜蘭長照</h3>
+        <p>爸媽需要照顧了，第一步該打給誰？該申請長照2.0還是請外籍看護？補助能給多少、自己要準備多少？我把宜蘭的申請流程、判斷順序和查詢管道整理成一張決策地圖。</p>
+      </div>
+      <div class="arr">前往 →</div>
+    </a>
+
+    <a class="zone" href="./50plus/">
+      <div>
+        <span class="tag">母專題</span>
+        <h3>50+ 人生選擇權</h3>
+        <p>寫給五十歲以後的家庭。談退休現金流、熟齡女性的財務自主、夫妻之間的錢，以及把房子留給孩子之前，該先想清楚的事。</p>
+      </div>
+      <div class="arr">前往 →</div>
+    </a>
+
+    <a class="zone" href="./observe/">
+      <div>
+        <span class="tag">觀念延伸</span>
+        <h3>新聞觀察</h3>
+        <p>社會新聞裡的家庭財產爭議，常常不是特例，而是很多家庭的縮影。這裡不談當事人，只談那些同樣可能發生在我們家的財務課題。</p>
+      </div>
+      <div class="arr">前往 →</div>
+    </a>
+  </div>
+</section>
+
+<section class="list">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="eyebrow">50+ 人生選擇權</div>
+      <h2>系列文章</h2>
+      <p class="lede">依閱讀順序排列。從自己的處境出發，一路走到完整的家庭財務盤點。</p>
+    </div>
+
+    <div style="margin-top:26px">
+      <a class="item live" href="./50plus/ep01-life-turning-fund.html">
+        <div class="no">EP01</div>
+        <div class="body">
+          <h4>女人除了退休金，還需要一筆「人生轉身金」</h4>
+          <p>不是離婚基金，是讓你在人生轉彎時，還有力氣做決定的一筆錢。</p>
+        </div>
+        <div class="st">閱讀 →</div>
+      </a>
+
+      <div class="item soon">
+        <div class="no">EP02</div>
+        <div class="body">
+          <h4>家庭有資產，不代表你自己有財務安全感</h4>
+          <p>先生有房、有股票、有收入，太太卻不知道家裡總共有多少。</p>
+        </div>
+        <div class="st">準備中</div>
+      </div>
+
+      <div class="item soon">
+        <div class="no">EP03</div>
+        <div class="body">
+          <h4>如果今天不是離婚，而是失智呢？</h4>
+          <p>比關係改變更常被忽略的，是另一半突然失去處理財務的能力。</p>
+        </div>
+        <div class="st">準備中</div>
+      </div>
+
+      <div class="item soon">
+        <div class="no">EP04</div>
+        <div class="body">
+          <h4>另一半突然離開，你知道家裡有多少錢嗎？</h4>
+          <p>一份「家庭財務急救包」，至少要包含哪些資料。</p>
+        </div>
+        <div class="st">準備中</div>
+      </div>
+
+      <div class="item soon">
+        <div class="no">EP05</div>
+        <div class="body">
+          <h4>房子過戶給配偶，房貸為什麼不一定跟著走？</h4>
+          <p>所有權和債務是兩件事，而它會直接影響你的退休現金流。</p>
+        </div>
+        <div class="st">準備中</div>
+      </div>
+
+      <div class="item soon">
+        <div class="no">EP06</div>
+        <div class="body">
+          <h4>老公很好，我為什麼還需要自己的錢？</h4>
+          <p>財務自主和婚姻幸福，本來就可以同時存在。</p>
+        </div>
+        <div class="st">準備中</div>
+      </div>
+
+      <div class="item soon">
+        <div class="no">EP07</div>
+        <div class="body">
+          <h4>把房子給孩子以前，先問：我自己住哪裡？</h4>
+          <p>傳承的第一順位，是先確保自己晚年活得好。</p>
+        </div>
+        <div class="st">準備中</div>
+      </div>
+
+      <div class="item soon">
+        <div class="no">EP08</div>
+        <div class="body">
+          <h4>離、病、老、走：熟齡家庭的四大財務壓力測試</h4>
+          <p>現在的資產配置，在這四種情境下還能不能運作？</p>
+        </div>
+        <div class="st">準備中</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="checkup">
+    <h3>50+ 家庭財務盤點｜先問自己這 5 件事</h3>
+    <p class="lede">不用準備任何資料，先在心裡回答看看。</p>
+    <ol class="qs">
+      <li>我家的房子，登記在誰名下？</li>
+      <li>家裡的貸款有多少、由誰負責償還？</li>
+      <li>我有沒有一筆自己可以掌握、隨時動用的現金？</li>
+      <li>如果有一方失能或離世，另一方有能力處理這些資產嗎？</li>
+      <li>如果人生關係改變，我是否仍有重新開始的能力？</li>
+    </ol>
+    <div class="verdict">如果這五題有兩題以上答不清楚，就值得重新盤一次家庭財務藍圖。</div>
+    <a class="btn line" href="https://lin.ee/pajsB7X" target="_blank" rel="noopener">用 LINE 跟芸聊聊</a>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap">
+    <div class="about-box">
+      <h3>關於財顧芸</h3>
+      <p>陳芸琪 Angie，在宜蘭執業的財務顧問與保險經紀人。日常在做的事，是陪家庭把退休、長照、保障與傳承一項一項盤清楚。</p>
+      <p>寫這個專欄的原因很簡單：我看過太多家庭不是因為沒錢而辛苦，而是因為沒有事先講清楚。如果能提早一點準備，很多遺憾其實可以不用發生。</p>
+      <div class="btnrow">
+        <a class="btn" href="https://lin.ee/pajsB7X" target="_blank" rel="noopener">預約財務盤點</a>
+        <a class="btn ghost" href="./tools/family-checkup.html">先做五問檢核</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h5>專區</h5>
+        <a href="./50plus/">50+ 人生選擇權</a>
+        <a href="./ilan-care/">宜蘭長照</a>
+        <a href="./observe/">新聞觀察</a>
+      </div>
+      <div>
+        <h5>聯絡</h5>
+        <a href="https://lin.ee/pajsB7X" target="_blank" rel="noopener">LINE 官方帳號</a>
+        <a href="./tools/family-checkup.html">家庭財務檢核</a>
+      </div>
+      <div>
+        <h5>服務</h5>
+        <a href="https://lin.ee/pajsB7X" target="_blank" rel="noopener">家庭財務盤點</a>
+        <a href="https://lin.ee/pajsB7X" target="_blank" rel="noopener">保單健檢</a>
+        <a href="https://lin.ee/pajsB7X" target="_blank" rel="noopener">退休與長照規劃</a>
+      </div>
+    </div>
+
+    <p class="disc">
+      本專欄內容為財務規劃觀念分享，不構成法律、稅務或個別投資建議。文章中提及之法規、補助標準與長照資源，可能隨政策調整而異動，實際情形請以主管機關最新公告為準。個別案件涉及之產權、稅負與法律效果，請諮詢律師、地政士或會計師。
+    </p>
+    <p class="copy">© 財顧芸｜馥芸財富學苑</p>
+  </div>
+</footer>
+
+</body>
+</html>
