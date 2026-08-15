@@ -22,7 +22,7 @@ const CFG = {
   lineUrl : 'https://lin.ee/pajsB7X',   // LINE@ 官方帳號
   // ↓ 部署 Apps Script 後，把網址貼進來（留空則不送出，工具照常運作）
   sheetApi: '',
-  columnUrl: '../'                       // 專欄首頁
+  columnUrl: '/'                       // 專欄首頁
 };
 </script>
 
@@ -36,7 +36,7 @@ const CFG = {
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:'Noto Sans TC',sans-serif;
-  font-size:18px;line-height:1.95;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  font-size:1.125rem;line-height:1.95;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer}
 :focus-visible{outline:3px solid var(--gold2);outline-offset:2px}
@@ -44,10 +44,10 @@ button{font-family:inherit;cursor:pointer}
 
 .top{background:#FBF7EF;border-bottom:1px solid var(--line)}
 .top-in{max-width:640px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:12px}
-.logo{font-family:'Noto Serif TC',serif;font-weight:900;font-size:18px;line-height:1.15}
-.logo small{display:block;font-family:'Noto Sans TC',sans-serif;font-size:9.5px;letter-spacing:3px;
+.logo{font-family:'Noto Serif TC',serif;font-weight:900;font-size:1.125rem;line-height:1.15}
+.logo small{display:block;font-family:'Noto Sans TC',sans-serif;font-size:0.5938rem;letter-spacing:3px;
   color:var(--gold2);font-weight:400;margin-top:3px}
-.top a.back{margin-left:auto;font-size:14px;color:var(--ink-mute)}
+.top a.back{margin-left:auto;font-size:0.875rem;color:var(--ink-mute)}
 
 /* 進度 */
 .bar{height:4px;background:var(--band);position:sticky;top:0;z-index:40}
@@ -57,22 +57,22 @@ button{font-family:inherit;cursor:pointer}
 .hidden{display:none!important}
 
 /* 開場 */
-.intro h1{font-family:'Noto Serif TC',serif;font-weight:900;font-size:clamp(25px,5.6vw,34px);line-height:1.5}
-.intro .eyebrow{font-size:11.5px;letter-spacing:5px;color:var(--gold2);margin-bottom:16px}
-.intro p{margin-top:20px;color:var(--ink-soft);font-size:16.5px}
+.intro h1{font-family:'Noto Serif TC',serif;font-weight:900;font-size:clamp(1.5625rem,5.6vw,2.125rem);line-height:1.5}
+.intro .eyebrow{font-size:0.7188rem;letter-spacing:5px;color:var(--gold2);margin-bottom:16px}
+.intro p{margin-top:20px;color:var(--ink-soft);font-size:1.0312rem}
 .facts{margin:26px 0 0;padding:0;list-style:none}
-.facts li{position:relative;padding:8px 0 8px 26px;font-size:16px;color:var(--ink-soft)}
+.facts li{position:relative;padding:8px 0 8px 26px;font-size:1rem;color:var(--ink-soft)}
 .facts li::before{content:'';position:absolute;left:4px;top:19px;width:7px;height:7px;
   border-radius:50%;background:var(--gold)}
 
 /* 題目 */
-.qno{font-size:12px;letter-spacing:4px;color:var(--gold2);margin-bottom:14px}
-.qt{font-family:'Noto Serif TC',serif;font-weight:900;font-size:clamp(21px,4.6vw,27px);line-height:1.6}
-.qhint{margin-top:14px;font-size:15.5px;color:var(--ink-mute);line-height:1.85}
+.qno{font-size:0.75rem;letter-spacing:4px;color:var(--gold2);margin-bottom:14px}
+.qt{font-family:'Noto Serif TC',serif;font-weight:900;font-size:clamp(1.3125rem,4.6vw,1.6875rem);line-height:1.6}
+.qhint{margin-top:14px;font-size:0.9688rem;color:var(--ink-mute);line-height:1.85}
 .opts{margin-top:28px;display:flex;flex-direction:column;gap:12px}
 .opt{
   background:var(--card);border:1.5px solid var(--line);border-radius:var(--r);
-  padding:19px 20px;font-size:17px;line-height:1.7;text-align:left;color:var(--ink);
+  padding:19px 20px;font-size:1.0625rem;line-height:1.7;text-align:left;color:var(--ink);
   transition:.15s;width:100%;display:flex;align-items:flex-start;gap:13px;
 }
 .opt:hover{border-color:var(--gold);background:var(--gold-pale)}
@@ -83,13 +83,13 @@ button{font-family:inherit;cursor:pointer}
 .opt.sel .dot::after{content:'';width:8px;height:8px;border-radius:50%;background:#FFFDF9}
 
 .navrow{display:flex;gap:12px;align-items:center;margin-top:30px}
-.lnk{background:none;border:none;font-size:15px;color:var(--ink-mute);padding:10px 4px}
+.lnk{background:none;border:none;font-size:0.9375rem;color:var(--ink-mute);padding:10px 4px}
 .lnk:hover{color:var(--gold2)}
 
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:9px;
   background:var(--gold2);color:#FFFDF9;border:none;padding:16px 30px;border-radius:var(--r);
-  font-family:'Noto Serif TC',serif;font-size:17px;font-weight:700;letter-spacing:1px;transition:.15s;
+  font-family:'Noto Serif TC',serif;font-size:1.0625rem;font-weight:700;letter-spacing:1px;transition:.15s;
 }
 .btn:hover{background:var(--bark)}
 .btn:disabled{opacity:.35;cursor:not-allowed}
@@ -102,15 +102,15 @@ button{font-family:inherit;cursor:pointer}
 /* 結果 */
 .verdict{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--vc,var(--gold));
   border-radius:var(--r);padding:28px 24px;margin-bottom:8px}
-.vlabel{font-size:11.5px;letter-spacing:4px;color:var(--gold2);margin-bottom:12px}
-.vtitle{font-family:'Noto Serif TC',serif;font-weight:900;font-size:clamp(22px,4.6vw,28px);line-height:1.5}
-.vscore{margin-top:16px;font-size:15px;color:var(--ink-mute)}
-.vscore b{font-family:'Noto Serif TC',serif;font-size:26px;color:var(--vc,var(--gold2));font-weight:900}
-.vtext{margin-top:16px;font-size:16.5px;color:var(--ink-soft)}
+.vlabel{font-size:0.7188rem;letter-spacing:4px;color:var(--gold2);margin-bottom:12px}
+.vtitle{font-family:'Noto Serif TC',serif;font-weight:900;font-size:clamp(1.375rem,4.6vw,1.75rem);line-height:1.5}
+.vscore{margin-top:16px;font-size:0.9375rem;color:var(--ink-mute)}
+.vscore b{font-family:'Noto Serif TC',serif;font-size:1.625rem;color:var(--vc,var(--gold2));font-weight:900}
+.vtext{margin-top:16px;font-size:1.0312rem;color:var(--ink-soft)}
 
 .rsec{margin-top:38px}
-.rsec h3{font-family:'Noto Serif TC',serif;font-weight:900;font-size:20px;margin-bottom:6px}
-.rsec .sub{font-size:14.5px;color:var(--ink-mute);margin-bottom:18px}
+.rsec h3{font-family:'Noto Serif TC',serif;font-weight:900;font-size:1.25rem;margin-bottom:6px}
+.rsec .sub{font-size:0.9062rem;color:var(--ink-mute);margin-bottom:18px}
 
 .ritem{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
   padding:20px 22px;margin-bottom:12px;border-left:4px solid var(--ic)}
@@ -118,39 +118,54 @@ button{font-family:inherit;cursor:pointer}
 .ritem[data-lv="mid"]{--ic:#C2A24E}
 .ritem[data-lv="gap"]{--ic:#BC6A48}
 .rhead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
-.rtag{font-size:11px;letter-spacing:2px;padding:2px 9px;border-radius:99px;border:1px solid var(--ic);color:var(--ic);flex-shrink:0}
-.rq{font-family:'Noto Serif TC',serif;font-weight:700;font-size:16.5px;line-height:1.6}
-.rmsg{margin-top:10px;font-size:15.5px;color:var(--ink-soft);line-height:1.85}
+.rtag{font-size:0.6875rem;letter-spacing:2px;padding:2px 9px;border-radius:99px;border:1px solid var(--ic);color:var(--ic);flex-shrink:0}
+.rq{font-family:'Noto Serif TC',serif;font-weight:700;font-size:1.0312rem;line-height:1.6}
+.rmsg{margin-top:10px;font-size:0.9688rem;color:var(--ink-soft);line-height:1.85}
 
 .first{background:var(--band);border:1px solid var(--line);border-radius:var(--r);padding:26px 24px;margin-top:34px}
-.first .lb{font-size:11.5px;letter-spacing:4px;color:var(--gold2);margin-bottom:12px}
-.first h4{font-family:'Noto Serif TC',serif;font-weight:900;font-size:19px;line-height:1.6}
-.first p{margin-top:12px;font-size:16px;color:var(--ink-soft)}
+.first .lb{font-size:0.7188rem;letter-spacing:4px;color:var(--gold2);margin-bottom:12px}
+.first h4{font-family:'Noto Serif TC',serif;font-weight:900;font-size:1.1875rem;line-height:1.6}
+.first p{margin-top:12px;font-size:1rem;color:var(--ink-soft)}
 
 .handoff{background:var(--card);border:1px solid var(--line2);border-radius:var(--r);padding:28px 24px;margin-top:34px}
-.handoff h3{font-family:'Noto Serif TC',serif;font-weight:900;font-size:20px;line-height:1.55}
-.handoff p{margin-top:12px;font-size:16px;color:var(--ink-soft)}
+.handoff h3{font-family:'Noto Serif TC',serif;font-weight:900;font-size:1.25rem;line-height:1.55}
+.handoff p{margin-top:12px;font-size:1rem;color:var(--ink-soft)}
 .handoff .btnrow{display:flex;flex-direction:column;gap:11px;margin-top:22px}
-.tiny{margin-top:16px;font-size:13px;line-height:1.85;color:var(--ink-mute)}
+.tiny{margin-top:16px;font-size:0.8125rem;line-height:1.85;color:var(--ink-mute)}
 
 .mailbox{margin-top:22px;padding-top:20px;border-top:1px dashed var(--line2)}
-.mailbox label{display:block;font-size:14.5px;color:var(--ink-soft);margin-bottom:9px}
-.mailbox input{width:100%;padding:14px 15px;font-size:16.5px;font-family:inherit;color:var(--ink);
+.mailbox label{display:block;font-size:0.9062rem;color:var(--ink-soft);margin-bottom:9px}
+.mailbox input{width:100%;padding:14px 15px;font-size:1.0312rem;font-family:inherit;color:var(--ink);
   background:var(--bg);border:1.5px solid var(--line);border-radius:var(--r)}
 .mailbox input:focus{border-color:var(--gold2);outline:none}
-.agree{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:14px;color:var(--ink-mute);line-height:1.75}
+.agree{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:0.875rem;color:var(--ink-mute);line-height:1.75}
 .agree input{width:20px;height:20px;flex-shrink:0;margin-top:3px;accent-color:var(--gold2)}
-.msg{margin-top:12px;font-size:14.5px;padding:11px 14px;border-radius:var(--r);display:none}
+.msg{margin-top:12px;font-size:0.9062rem;padding:11px 14px;border-radius:var(--r);display:none}
 .msg.ok{display:block;background:rgba(92,138,102,.12);color:#3F7D58}
 .msg.err{display:block;background:rgba(188,106,72,.12);color:var(--coral)}
 
 .disc{margin-top:40px;padding-top:22px;border-top:1px solid var(--line);
-  font-size:13px;line-height:1.9;color:var(--ink-mute)}
+  font-size:0.8125rem;line-height:1.9;color:var(--ink-mute)}
+
+/* 字級調整 */
+.fs{display:flex;align-items:center;gap:.25rem;margin-left:.5rem}
+.fs b{font-size:.6875rem;letter-spacing:.125rem;color:var(--ink-mute);font-weight:400;margin-right:.125rem}
+.fs button{
+  width:2rem;height:2rem;border:1px solid var(--line2);background:var(--card);color:var(--gold2);
+  border-radius:var(--r);font-family:'Noto Serif TC',serif;font-weight:700;line-height:1;
+  display:flex;align-items:center;justify-content:center;padding:0;transition:.15s;
+}
+.fs button:hover{background:var(--gold-pale);border-color:var(--gold)}
+.fs button[aria-pressed="true"]{background:var(--gold2);color:#FFFDF9;border-color:var(--gold2)}
+.fs button:nth-child(2){font-size:.75rem}
+.fs button:nth-child(3){font-size:.9375rem}
+.fs button:nth-child(4){font-size:1.125rem}
+@media (max-width:640px){.fs{margin-left:0;margin-top:.25rem}}
 
 @media (max-width:640px){
-  body{font-size:17px}
+  body{font-size:1.0625rem}
   .wrap{padding:0 18px}
-  .opt{padding:17px 17px;font-size:16.5px}
+  .opt{padding:17px 17px;font-size:1.0312rem}
   .btn{width:100%;padding:16px 20px}
   .navrow{flex-wrap:wrap}
 }
@@ -161,8 +176,15 @@ button{font-family:inherit;cursor:pointer}
 
 <header class="top">
   <div class="top-in">
-    <a class="logo" href="../">50+ 人生選擇權<small>財顧芸．陳芸琪</small></a>
-    <a class="back" href="../">← 回首頁</a>
+    <a class="logo" href="/">50+ 人生選擇權<small>財顧芸．陳芸琪</small></a>
+    <a class="back" href="/">← 回首頁</a>
+      <div class="fs" role="group" aria-label="字級調整">
+        <b>字級</b>
+        <button type="button" data-fs="100" aria-pressed="true">A</button>
+        <button type="button" data-fs="118" aria-pressed="false">A</button>
+        <button type="button" data-fs="136" aria-pressed="false">A</button>
+      </div>
+
   </div>
 </header>
 <div class="bar"><i id="bar"></i></div>
@@ -514,5 +536,27 @@ function send(kind, contact){
   return fetch(CFG.sheetApi, { method:'POST', mode:'no-cors', body: fd });
 }
 </script>
+<script>
+(function(){
+  var KEY='yp-fs';
+  function apply(v){
+    document.documentElement.style.fontSize=v+'%';
+    document.querySelectorAll('.fs button').forEach(function(b){
+      b.setAttribute('aria-pressed', b.dataset.fs===String(v)?'true':'false');
+    });
+  }
+  var saved=null;
+  try{ saved=localStorage.getItem(KEY); }catch(e){}
+  if(saved) apply(saved);
+  document.querySelectorAll('.fs button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var v=b.dataset.fs;
+      apply(v);
+      try{ localStorage.setItem(KEY,v); }catch(e){}
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
