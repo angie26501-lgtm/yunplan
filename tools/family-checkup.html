@@ -137,17 +137,6 @@ button{font-family:inherit;cursor:pointer}
 .handoff .btnrow{display:flex;flex-direction:column;gap:11px;margin-top:22px}
 .tiny{margin-top:16px;font-size:0.8125rem;line-height:1.85;color:var(--ink-mute)}
 
-.mailbox{margin-top:22px;padding-top:20px;border-top:1px dashed var(--line2)}
-.mailbox label{display:block;font-size:0.9062rem;color:var(--ink-soft);margin-bottom:9px}
-.mailbox input{width:100%;padding:14px 15px;font-size:1.0312rem;font-family:inherit;color:var(--ink);
-  background:var(--bg);border:1.5px solid var(--line);border-radius:var(--r)}
-.mailbox input:focus{border-color:var(--gold2);outline:none}
-.agree{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:0.875rem;color:var(--ink-mute);line-height:1.75}
-.agree input{width:20px;height:20px;flex-shrink:0;margin-top:3px;accent-color:var(--gold2)}
-.msg{margin-top:12px;font-size:0.9062rem;padding:11px 14px;border-radius:var(--r);display:none}
-.msg.ok{display:block;background:rgba(92,138,102,.12);color:#3F7D58}
-.msg.err{display:block;background:rgba(188,106,72,.12);color:var(--coral)}
-
 .disc{margin-top:40px;padding-top:22px;border-top:1px solid var(--line);
   font-size:0.8125rem;line-height:1.9;color:var(--ink-mute)}
 
@@ -202,7 +191,7 @@ button{font-family:inherit;cursor:pointer}
   <p>這不是考試，沒有標準答案。只是把很多家庭平常沒機會講清楚的事，一次問過一遍。</p>
   <ul class="facts">
     <li>五題，大概三分鐘</li>
-    <li>看結果不用留任何個資</li>
+    <li>全程不用留下任何個資</li>
     <li>不會問你的收入、存款或資產金額</li>
   </ul>
   <div class="navrow">
@@ -252,15 +241,7 @@ button{font-family:inherit;cursor:pointer}
     </div>
     <p class="tiny">不會自動送出任何資料。你貼上之後才會傳給我。</p>
 
-    <div class="mailbox">
-      <label for="mail">或者，留下 Email 收完整的《家庭財務盤點表》</label>
-      <input type="email" id="mail" placeholder="your@email.com" autocomplete="email" inputmode="email">
-      <label class="agree">
-        <input type="checkbox" id="agree">
-        <span>我同意財顧芸保存這份檢核結果與聯絡方式，作為後續提供資料與服務聯繫之用。</span>
-      </label>
-      <button class="btn ghost full" id="btnMail" style="margin-top:14px" disabled>送出</button>
-      <div class="msg" id="mailMsg"></div>
+
     </div>
   </div>
 
@@ -504,40 +485,14 @@ $('btnCopy').onclick = () => {
   });
 };
 
-/* ── Email ── */
-const mail = $('mail'), agree = $('agree'), btnMail = $('btnMail');
-function checkMail(){
-  const ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail.value.trim()) && agree.checked;
-  btnMail.disabled = !ok;
-}
-mail.oninput = checkMail;
-agree.onchange = checkMail;
-
-btnMail.onclick = () => {
-  const m = $('mailMsg');
-  btnMail.disabled = true;
-  btnMail.textContent = '送出中…';
-  send('mail', mail.value.trim()).then(() => {
-    m.className = 'msg ok';
-    m.textContent = '收到了，我會把盤點表寄給你。';
-    btnMail.textContent = '已送出 ✓';
-  }).catch(() => {
-    m.className = 'msg err';
-    m.textContent = '送出失敗，可以改用上面的 LINE 按鈕，一樣可以收到。';
-    btnMail.textContent = '送出';
-    btnMail.disabled = false;
-  });
-};
-
 /* ── 送到 Google Sheet ── */
-function send(kind, contact){
+function send(kind){
   if(!CFG.sheetApi) return Promise.resolve();
   const fd = new FormData();
-  fd.append('kind', kind);                       // view / line / mail
+  fd.append('kind', kind);                       // view / line
   fd.append('score', score());
   fd.append('answers', ans.map((a,i) => a === null ? '-' : Q[i].o[a].s).join(','));
   fd.append('labels', ans.map((a,i) => a === null ? '未作答' : Q[i].o[a].label).join(' ｜ '));
-  fd.append('contact', contact || '');
   fd.append('ts', new Date().toISOString());
   return fetch(CFG.sheetApi, { method:'POST', mode:'no-cors', body: fd });
 }
