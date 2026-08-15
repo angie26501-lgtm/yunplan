@@ -23,69 +23,84 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:'Noto Sans TC',sans-serif;
-  font-size:17px;line-height:1.95;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  font-size:1.0625rem;line-height:1.95;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
 .wrap{max-width:760px;margin:0 auto;padding:0 20px}
 
 .top{background:#FBF7EF;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
 .top-in{max-width:960px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.logo{font-family:'Noto Serif TC',serif;font-weight:900;font-size:19px;line-height:1.15;flex-shrink:0}
-.logo small{display:block;font-family:'Noto Sans TC',sans-serif;font-size:9.5px;letter-spacing:3px;color:var(--gold2);font-weight:400;margin-top:3px}
+.logo{font-family:'Noto Serif TC',serif;font-weight:900;font-size:1.1875rem;line-height:1.15;flex-shrink:0}
+.logo small{display:block;font-family:'Noto Sans TC',sans-serif;font-size:0.5938rem;letter-spacing:3px;color:var(--gold2);font-weight:400;margin-top:3px}
 nav{display:flex;gap:2px;flex-wrap:wrap;margin-left:auto}
-nav a{padding:7px 12px;font-size:14.5px;color:var(--ink-mute);border-radius:var(--r)}
+nav a{padding:7px 12px;font-size:0.9062rem;color:var(--ink-mute);border-radius:var(--r)}
 nav a:hover{color:var(--gold2);background:rgba(194,162,78,.09)}
 nav a.on{color:var(--gold2);font-weight:500}
 
-.crumb{font-size:13px;color:var(--ink-mute);padding:24px 0 0}
+.crumb{font-size:0.8125rem;color:var(--ink-mute);padding:24px 0 0}
 .crumb a:hover{color:var(--gold2)}
 
 .hd{padding:26px 0 40px;border-bottom:1px solid var(--line)}
-.hd .eyebrow{font-size:11.5px;letter-spacing:5px;color:var(--gold2);margin-bottom:16px}
-.hd h1{font-family:'Noto Serif TC',serif;font-weight:900;font-size:clamp(27px,5.6vw,40px);line-height:1.4}
-.hd .sub{margin-top:20px;font-size:17px;color:var(--ink-soft);max-width:32em}
+.hd .eyebrow{font-size:0.7188rem;letter-spacing:5px;color:var(--gold2);margin-bottom:16px}
+.hd h1{font-family:'Noto Serif TC',serif;font-weight:900;font-size:clamp(1.6875rem,5.6vw,2.5rem);line-height:1.4}
+.hd .sub{margin-top:20px;font-size:1.0625rem;color:var(--ink-soft);max-width:32em}
 
 .intro{padding:38px 0 10px}
 .intro p{margin-bottom:20px;color:var(--ink-soft)}
-.pull{font-family:'Noto Serif TC',serif;font-size:clamp(19px,3.6vw,22px);font-weight:700;line-height:1.85;
+.pull{font-family:'Noto Serif TC',serif;font-size:clamp(1.1875rem,3.6vw,1.375rem);font-weight:700;line-height:1.85;
   background:var(--gold-pale);border-left:4px solid var(--gold);border-radius:0 var(--r) var(--r) 0;
   padding:22px 24px;margin:30px 0}
 
 .lsec{padding:30px 0 10px}
-.lsec h2{font-family:'Noto Serif TC',serif;font-weight:900;font-size:23px;margin-bottom:6px}
-.lsec .note{font-size:14.5px;color:var(--ink-mute);margin-bottom:22px}
+.lsec h2{font-family:'Noto Serif TC',serif;font-weight:900;font-size:1.4375rem;margin-bottom:6px}
+.lsec .note{font-size:0.9062rem;color:var(--ink-mute);margin-bottom:22px}
 
 .item{display:flex;gap:18px;align-items:baseline;padding:20px 6px;
   border-bottom:1px solid rgba(150,120,70,.14);transition:.15s}
 a.item:hover{background:rgba(194,162,78,.07)}
-.item .no{font-family:'Noto Serif TC',serif;font-size:13px;color:var(--gold);letter-spacing:1px;flex-shrink:0;width:52px;padding-top:3px}
+.item .no{font-family:'Noto Serif TC',serif;font-size:0.8125rem;color:var(--gold);letter-spacing:1px;flex-shrink:0;width:52px;padding-top:3px}
 .item .body{flex:1;min-width:0}
-.item h3{font-family:'Noto Serif TC',serif;font-size:18px;font-weight:700;line-height:1.6}
-.item p{font-size:14.5px;color:var(--ink-mute);margin-top:5px;line-height:1.75}
-.item .st{font-size:12px;color:var(--ink-mute);flex-shrink:0;padding-top:5px}
+.item h3{font-family:'Noto Serif TC',serif;font-size:1.125rem;font-weight:700;line-height:1.6}
+.item p{font-size:0.9062rem;color:var(--ink-mute);margin-top:5px;line-height:1.75}
+.item .st{font-size:0.75rem;color:var(--ink-mute);flex-shrink:0;padding-top:5px}
 .item.soon{opacity:.5}
 .item.soon h3{font-weight:500}
 a.item h3{color:var(--gold2)}
 
 .tool{background:var(--band);border:1px solid var(--line);border-radius:var(--r);padding:30px 26px;margin:44px 0 10px}
-.tool .lb{font-size:11.5px;letter-spacing:4px;color:var(--gold2);margin-bottom:12px}
-.tool h3{font-family:'Noto Serif TC',serif;font-weight:900;font-size:clamp(20px,3.6vw,24px);line-height:1.5}
-.tool p{margin-top:12px;font-size:16px;color:var(--ink-soft)}
+.tool .lb{font-size:0.7188rem;letter-spacing:4px;color:var(--gold2);margin-bottom:12px}
+.tool h3{font-family:'Noto Serif TC',serif;font-weight:900;font-size:clamp(1.25rem,3.6vw,1.5rem);line-height:1.5}
+.tool p{margin-top:12px;font-size:1rem;color:var(--ink-soft)}
 .btn{display:inline-flex;align-items:center;gap:9px;margin-top:20px;background:var(--gold2);color:#FFFDF9;
-  padding:15px 30px;border-radius:var(--r);font-family:'Noto Serif TC',serif;font-size:16px;font-weight:700;letter-spacing:1px}
+  padding:15px 30px;border-radius:var(--r);font-family:'Noto Serif TC',serif;font-size:1rem;font-weight:700;letter-spacing:1px}
 .btn:hover{background:var(--bark)}
 
 footer{background:#F1EADB;border-top:1px solid var(--line);padding:34px 0 42px;margin-top:54px}
 footer .fw{max-width:960px;margin:0 auto;padding:0 20px}
-.disc{font-size:12.5px;line-height:1.9;color:var(--ink-mute);max-width:52em}
-.copy{margin-top:14px;font-size:12px;color:var(--ink-mute)}
+.disc{font-size:0.7812rem;line-height:1.9;color:var(--ink-mute);max-width:52em}
+.copy{margin-top:14px;font-size:0.75rem;color:var(--ink-mute)}
+
+/* 字級調整 */
+.fs{display:flex;align-items:center;gap:.25rem;margin-left:.5rem}
+.fs b{font-size:.6875rem;letter-spacing:.125rem;color:var(--ink-mute);font-weight:400;margin-right:.125rem}
+.fs button{
+  width:2rem;height:2rem;border:1px solid var(--line2);background:var(--card);color:var(--gold2);
+  border-radius:var(--r);font-family:'Noto Serif TC',serif;font-weight:700;line-height:1;
+  display:flex;align-items:center;justify-content:center;padding:0;transition:.15s;
+}
+.fs button:hover{background:var(--gold-pale);border-color:var(--gold)}
+.fs button[aria-pressed="true"]{background:var(--gold2);color:#FFFDF9;border-color:var(--gold2)}
+.fs button:nth-child(2){font-size:.75rem}
+.fs button:nth-child(3){font-size:.9375rem}
+.fs button:nth-child(4){font-size:1.125rem}
+@media (max-width:640px){.fs{margin-left:0;margin-top:.25rem}}
 
 @media (max-width:640px){
-  body{font-size:16.5px}
+  body{font-size:1.0312rem}
   .wrap{padding:0 18px}
   nav{margin-left:0;width:100%}
   .item{gap:12px}
-  .item .no{width:44px;font-size:12px}
+  .item .no{width:44px;font-size:0.75rem}
   .btn{width:100%;justify-content:center}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -95,17 +110,24 @@ footer .fw{max-width:960px;margin:0 auto;padding:0 20px}
 
 <header class="top">
   <div class="top-in">
-    <a class="logo" href="../">50+ 人生選擇權<small>財顧芸．陳芸琪</small></a>
+    <a class="logo" href="/">50+ 人生選擇權<small>財顧芸．陳芸琪</small></a>
     <nav>
-      <a href="../">首頁</a>
-      <a class="on" href="./">系列文章</a>
-      <a href="../ilan-care/">宜蘭長照</a>
-      <a href="../observe/">新聞觀察</a>
+      <a href="/">首頁</a>
+      <a class="on" href="/50plus/">系列文章</a>
+      <a href="/ilan-care/">宜蘭長照</a>
+      <a href="/observe/">新聞觀察</a>
     </nav>
+      <div class="fs" role="group" aria-label="字級調整">
+        <b>字級</b>
+        <button type="button" data-fs="100" aria-pressed="true">A</button>
+        <button type="button" data-fs="118" aria-pressed="false">A</button>
+        <button type="button" data-fs="136" aria-pressed="false">A</button>
+      </div>
+
   </div>
 </header>
 
-<div class="wrap"><div class="crumb"><a href="../">首頁</a> ／ 系列文章</div></div>
+<div class="wrap"><div class="crumb"><a href="/">首頁</a> ／ 系列文章</div></div>
 
 <section class="wrap hd">
   <div class="eyebrow">系列文章</div>
@@ -125,7 +147,7 @@ footer .fw{max-width:960px;margin:0 auto;padding:0 20px}
   <h2>系列文章</h2>
   <p class="note">依閱讀順序排列。也可以只挑跟你現在處境有關的那一篇看。</p>
 
-  <a class="item" href="./ep01-life-turning-fund.html">
+  <a class="item" href="/50plus/ep01-life-turning-fund.html">
     <div class="no">EP01</div>
     <div class="body">
       <h3>女人除了退休金，還需要一筆「人生轉身金」</h3>
@@ -203,7 +225,7 @@ footer .fw{max-width:960px;margin:0 auto;padding:0 20px}
     <div class="lb">先做一次自我檢核</div>
     <h3>五個問題，看看你家的財務地基穩不穩</h3>
     <p>三分鐘做完，會告訴你哪一項最該先補。不用留任何個資就能看結果。</p>
-    <a class="btn" href="../tools/family-checkup.html">開始檢核</a>
+    <a class="btn" href="/tools/family-checkup.html">開始檢核</a>
   </div>
 </section>
 
@@ -213,6 +235,28 @@ footer .fw{max-width:960px;margin:0 auto;padding:0 20px}
     <p class="copy">© 財顧芸｜馥芸財富學苑</p>
   </div>
 </footer>
+
+<script>
+(function(){
+  var KEY='yp-fs';
+  function apply(v){
+    document.documentElement.style.fontSize=v+'%';
+    document.querySelectorAll('.fs button').forEach(function(b){
+      b.setAttribute('aria-pressed', b.dataset.fs===String(v)?'true':'false');
+    });
+  }
+  var saved=null;
+  try{ saved=localStorage.getItem(KEY); }catch(e){}
+  if(saved) apply(saved);
+  document.querySelectorAll('.fs button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var v=b.dataset.fs;
+      apply(v);
+      try{ localStorage.setItem(KEY,v); }catch(e){}
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
