@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -112,15 +113,18 @@ button{font-family:inherit;cursor:pointer}
 .rsec h3{font-family:'Noto Serif TC',serif;font-weight:900;font-size:1.25rem;margin-bottom:6px}
 .rsec .sub{font-size:0.9062rem;color:var(--ink-mute);margin-bottom:18px}
 
-.ritem{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
-  padding:20px 22px;margin-bottom:12px;border-left:4px solid var(--ic)}
-.ritem[data-lv="ok"]{--ic:#5C8A66}
-.ritem[data-lv="mid"]{--ic:#C2A24E}
-.ritem[data-lv="gap"]{--ic:#BC6A48}
-.rhead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
-.rtag{font-size:0.6875rem;letter-spacing:2px;padding:2px 9px;border-radius:99px;border:1px solid var(--ic);color:var(--ic);flex-shrink:0}
-.rq{font-family:'Noto Serif TC',serif;font-weight:700;font-size:1.0312rem;line-height:1.6}
-.rmsg{margin-top:10px;font-size:0.9688rem;color:var(--ink-soft);line-height:1.85}
+.ritem{background:var(--bgc);border:1px solid var(--ic);border-radius:var(--r);
+  padding:20px 22px;margin-bottom:14px;border-left:8px solid var(--ic)}
+.ritem[data-lv="ok"]{--ic:#3D6B47;--bgc:#F0F6F1}
+.ritem[data-lv="mid"]{--ic:#8A6A12;--bgc:#FBF3DE}
+.ritem[data-lv="gap"]{--ic:#A34526;--bgc:#FBEBE4}
+.rhead{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.rtag{font-size:0.75rem;letter-spacing:2px;padding:3px 10px;border-radius:3px;
+  background:var(--ic);color:#FFFDF9;font-weight:700;flex-shrink:0}
+.rstate{font-size:0.8125rem;font-weight:700;color:var(--ic);flex-shrink:0;display:flex;align-items:center;gap:6px}
+.rstate i{width:9px;height:9px;border-radius:50%;background:var(--ic);display:block}
+.rq{font-family:'Noto Serif TC',serif;font-weight:700;font-size:1.0625rem;line-height:1.6;width:100%;color:var(--ink)}
+.rmsg{font-size:0.9688rem;color:var(--ink-soft);line-height:1.85}
 
 .first{background:var(--band);border:1px solid var(--line);border-radius:var(--r);padding:26px 24px;margin-top:34px}
 .first .lb{font-size:0.7188rem;letter-spacing:4px;color:var(--gold2);margin-bottom:12px}
@@ -229,7 +233,7 @@ button{font-family:inherit;cursor:pointer}
 
   <div class="rsec">
     <h3>逐題回饋</h3>
-    <p class="sub">綠色是穩的，黃色是知道但不夠細，橘色是目前的缺口。</p>
+    <p class="sub">每題標示了目前狀態：<strong>穩</strong>、<strong>可補強</strong>、<strong>待補</strong>。</p>
     <div id="rlist"></div>
   </div>
 
@@ -428,8 +432,10 @@ function result(){
     const d = document.createElement('div');
     d.className = 'ritem';
     d.setAttribute('data-lv', lv);
+    var ST = {ok:'穩', mid:'可補強', gap:'待補'};
     d.innerHTML =
       '<div class="rhead"><span class="rtag">' + q.tag + '</span>' +
+      '<span class="rstate"><i></i>' + ST[lv] + '</span>' +
       '<span class="rq">' + q.t + '</span></div>' +
       '<p class="rmsg">' + q[lv] + '</p>';
     list.appendChild(d);
