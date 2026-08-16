@@ -1,0 +1,20 @@
+# yunplan.tw -> allfreedom.info permanent redirects
+# Exact routes first
+/ https://www.allfreedom.info/ 301
+/ilan-care https://www.allfreedom.info/ilan-care.html 301
+/ilan-care/ https://www.allfreedom.info/ilan-care.html 301
+/ilan-care/index.html https://www.allfreedom.info/ilan-care.html 301
+/ilan-care/how-to-apply.html https://www.allfreedom.info/ilan-care-how-to-apply.html 301
+/ilan-care/which-service.html https://www.allfreedom.info/ilan-care-which-service.html 301
+/ilan-care/cost-gap.html https://www.allfreedom.info/ilan-care-cost-gap.html 301
+/ilan-care/siblings-and-money.html https://www.allfreedom.info/ilan-care-siblings-money.html 301
+/50plus/ep01-life-turning-fund.html https://www.allfreedom.info/life-turning-fund.html 301
+/observe/marital-property-myths.html https://www.allfreedom.info/marital-property-myths.html 301
+/tools/family-checkup.html https://www.allfreedom.info/family-checkup.html 301
+
+# Section fallbacks
+/ilan-care/* https://www.allfreedom.info/ilan-care.html 301
+/50plus/* https://www.allfreedom.info/ 301
+/observe/* https://www.allfreedom.info/ 301
+/tools/* https://www.allfreedom.info/ 301
+/* https://www.allfreedom.info/ 301
