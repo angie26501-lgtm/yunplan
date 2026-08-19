@@ -60,7 +60,13 @@
     background:#fff;border:1.5px solid rgba(150,120,70,.35);border-radius:7px;
     padding:11px 13px;margin-bottom:16px;line-height:1.7;resize:vertical}
   .yp-box textarea{min-height:110px}
-  .yp-box textarea:focus{border-color:#9E7A34;outline:none}
+  .yp-box input[type="url"],.yp-box select{width:100%;font-family:inherit;font-size:14.5px;color:#4A3B2A;
+    background:#fff;border:1.5px solid rgba(150,120,70,.35);border-radius:7px;
+    padding:11px 13px;margin-bottom:16px;line-height:1.5}
+  .yp-box textarea:focus,.yp-box input:focus,.yp-box select:focus{border-color:#9E7A34;outline:none}
+  .yp-check{display:flex;align-items:flex-start;gap:8px;font-size:13px;line-height:1.7;
+    color:rgba(74,59,42,.68);margin:-2px 0 17px;cursor:pointer}
+  .yp-check input{margin-top:4px;accent-color:#9E7A34}
 
   .yp-page{background:#F1EADB;border-radius:6px;padding:10px 13px;margin-bottom:18px;
     font-size:12.5px;color:rgba(74,59,42,.6);line-height:1.7;word-break:break-all}
@@ -79,6 +85,27 @@
   .yp-ok h3{font-family:'Noto Serif TC',serif;font-size:19px;font-weight:900;margin:0 0 10px}
   .yp-ok p{font-size:14.5px;line-height:1.85;color:rgba(74,59,42,.72);margin:0 0 20px}
   .yp-priv{font-size:12px;color:rgba(74,59,42,.45);line-height:1.7;margin-top:14px}
+
+  .yp-inline{max-width:720px;margin:38px auto;padding:0 20px;font-family:'Noto Sans TC',sans-serif;color:#4A3B2A}
+  .yp-inline-in{background:#FBF6EC;border:1px solid rgba(150,120,70,.28);border-left:4px solid #C2A24E;
+    border-radius:0 7px 7px 0;padding:20px 22px}
+  .yp-inline h3{font-family:'Noto Serif TC',serif;font-size:18px;margin:0 0 7px;line-height:1.5}
+  .yp-inline p{font-size:14px;line-height:1.8;color:rgba(74,59,42,.72);margin:0}
+  .yp-inline-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}
+  .yp-inline-btn{border:1.5px solid #9E7A34;border-radius:6px;padding:9px 15px;background:#FFFDF9;
+    color:#9E7A34;font-family:inherit;font-size:13.5px;font-weight:700;cursor:pointer}
+  .yp-inline-btn.primary{background:#9E7A34;color:#FFFDF9}
+  .yp-inline-btn:hover{background:#8A6A44;color:#FFFDF9;border-color:#8A6A44}
+
+  .yp-reader{max-width:720px;margin:38px auto;padding:0 20px;font-family:'Noto Sans TC',sans-serif;color:#4A3B2A}
+  .yp-reader h2{font-family:'Noto Serif TC',serif;font-size:21px;margin:0 0 14px}
+  .yp-reader-card{background:#FFFDF9;border:1px solid rgba(92,138,102,.3);border-radius:7px;
+    padding:18px 20px;margin:0 0 12px}
+  .yp-reader-meta{font-size:12.5px;color:#5C8A66;margin-bottom:7px}
+  .yp-reader-body{font-size:14.5px;line-height:1.85;color:rgba(74,59,42,.8)}
+  .yp-reader-source{font-size:12.5px;margin-top:9px}
+  .yp-reader-source a{color:#2F6B54;text-decoration:underline;text-underline-offset:3px}
+  @media (max-width:640px){.yp-inline,.yp-reader{padding:0 16px}.yp-inline-in{padding:17px 18px}}
   `;
 
   function el(tag, cls, html) {
@@ -127,12 +154,17 @@
         '<div class="yp-types">' + typeHtml + '</div>' +
         '<span class="yp-lb">想說的話</span>' +
         '<textarea id="ypMsg" placeholder="不用寫得很完整，想到什麼講什麼就好。"></textarea>' +
+        '<span class="yp-lb">相關鄉鎮（選填）</span>' +
+        '<select id="ypTown"><option value="">不指定</option><option>宜蘭市</option><option>羅東鎮</option><option>蘇澳鎮</option><option>頭城鎮</option><option>礁溪鄉</option><option>壯圍鄉</option><option>員山鄉</option><option>冬山鄉</option><option>五結鄉</option><option>三星鄉</option><option>大同鄉</option><option>南澳鄉</option><option>其他／不確定</option></select>' +
+        '<span class="yp-lb">資料來源網址（選填）</span>' +
+        '<input id="ypSource" type="url" inputmode="url" placeholder="例如：政府公告或服務單位網頁">' +
+        '<label class="yp-check"><input id="ypPublish" type="checkbox"><span>同意查核後，以匿名方式整理刊登在網站的「讀者補充」。</span></label>' +
         '<div class="yp-page">這一頁：' + location.pathname + '</div>' +
         '<div class="yp-btns">' +
           '<button type="button" class="yp-btn yp-cancel" id="ypNo">取消</button>' +
           '<button type="button" class="yp-btn yp-send" id="ypGo" disabled>送出</button>' +
         '</div>' +
-        '<p class="yp-priv">我只會收到回報類型、你填的內容和頁面網址，不會蒐集姓名、聯絡方式或其他個人資料。查證後若採用，會更新在文章裡。</p>' +
+        '<p class="yp-priv">表單不要求姓名或聯絡方式。內容會先審核，不會直接公開；透過 LINE 傳送時，對方會看到你的 LINE 顯示名稱。</p>' +
       '</div>';
 
     box.querySelectorAll('.yp-t').forEach(function (b) {
@@ -161,20 +193,31 @@
 
   function send() {
     var msg = box.querySelector('#ypMsg').value.trim();
+    var town = box.querySelector('#ypTown').value;
+    var source = box.querySelector('#ypSource').value.trim();
+    var publish = box.querySelector('#ypPublish').checked;
     var go = box.querySelector('#ypGo');
     go.disabled = true;
     go.textContent = '送出中…';
 
     var text =
-      '【網站回報】\n' +
+      '【yunplan 讀者分享｜待審核】\n' +
       '類型：' + label(picked) + '\n' +
+      '相關鄉鎮：' + (town || '未指定') + '\n' +
       '頁面：' + location.href + '\n' +
+      '資料來源：' + (source || '未提供') + '\n' +
+      '匿名刊登：' + (publish ? '同意' : '僅供查核') + '\n' +
       '內容：' + msg;
 
     if (CFG.api) {
       var fd = new FormData();
+      fd.append('kind', 'reader_contribution');
+      fd.append('status', 'pending');
       fd.append('type', label(picked));
+      fd.append('town', town);
       fd.append('page', location.href);
+      fd.append('source', source);
+      fd.append('publish', publish ? 'yes' : 'no');
       fd.append('msg', msg);
       fetch(CFG.api, { method: 'POST', mode: 'no-cors', body: fd })
         .then(done).catch(done);
@@ -203,8 +246,8 @@
   function done(viaLine) {
     var extra = (viaLine === true && !CFG.api)
       ? '<p>內容已經複製起來了，接著會開啟 LINE，貼上傳送給我就可以。</p>'
-      : '<p>我會查證之後更新內容。</p>' +
-        '<p style="font-size:13.5px;color:rgba(74,59,42,.55);margin-top:-8px">你花的這幾分鐘，可能會幫到某個正在慌的人。</p>';
+      : '<p>內容已進入待審核，我會先查證，不會直接公開。</p>' +
+        '<p style="font-size:13.5px;color:rgba(74,59,42,.55);margin-top:-8px">若你同意匿名刊登，確認後才會整理到「讀者補充」。</p>';
     box.innerHTML =
       '<div class="yp-ok">' +
         '<div class="ic">🌿</div>' +
@@ -218,19 +261,80 @@
     }
   }
 
-  function open() { form(); picked = null; mask.classList.add('on'); }
+  function open(initialType) {
+    form();
+    picked = null;
+    mask.classList.add('on');
+    if (initialType) {
+      var preset = box.querySelector('.yp-t[data-v="' + initialType + '"]');
+      if (preset) preset.click();
+    }
+  }
   function close() { mask.classList.remove('on'); }
 
-  fab.onclick = open;
+  function addInlineInvite() {
+    if (location.pathname === '/' || location.pathname.indexOf('/tools/') === 0) return;
+    var footer = document.querySelector('footer');
+    if (!footer || document.querySelector('.yp-inline')) return;
+    var wrap = el('section', 'yp-inline');
+    wrap.setAttribute('aria-label', '分享資訊與問題回報');
+    wrap.innerHTML =
+      '<div class="yp-inline-in">' +
+        '<h3>你也知道相關資訊嗎？</h3>' +
+        '<p>歡迎補充宜蘭在地資源、實際經驗或官方來源。內容會先查核，不會直接公開。</p>' +
+        '<div class="yp-inline-actions">' +
+          '<button type="button" class="yp-inline-btn primary" data-open-share>分享你知道的資訊</button>' +
+          '<button type="button" class="yp-inline-btn" data-open-report>回報錯誤或失效連結</button>' +
+        '</div>' +
+      '</div>';
+    footer.parentNode.insertBefore(wrap, footer);
+  }
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (ch) {
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];
+    });
+  }
+
+  function renderReaderNotes() {
+    var all = window.YP_APPROVED_NOTES || {};
+    var notes = all[location.pathname] || [];
+    if (!notes.length) return;
+    var invite = document.querySelector('.yp-inline');
+    var footer = document.querySelector('footer');
+    var anchor = invite || footer;
+    if (!anchor || document.querySelector('.yp-reader')) return;
+    var section = el('section', 'yp-reader');
+    section.setAttribute('aria-label', '經查核的讀者補充');
+    section.innerHTML = '<h2>讀者補充</h2>' + notes.map(function (n) {
+      var source = n.source
+        ? '<div class="yp-reader-source">參考來源：<a href="' + esc(n.source) + '" target="_blank" rel="noopener">查看資料</a></div>'
+        : '';
+      return '<article class="yp-reader-card">' +
+        '<div class="yp-reader-meta">' + esc(n.town || '讀者提供') + ' · 本站查核 ' + esc(n.checked || '') + '</div>' +
+        '<div class="yp-reader-body">' + esc(n.body) + '</div>' + source +
+      '</article>';
+    }).join('');
+    anchor.parentNode.insertBefore(section, anchor);
+  }
+
+  fab.onclick = function () { open(null); };
   document.addEventListener('click', function (e) {
-    var trigger = e.target.closest && e.target.closest('[data-open-report]');
-    if (trigger) {
+    var share = e.target.closest && e.target.closest('[data-open-share]');
+    var report = e.target.closest && e.target.closest('[data-open-report]');
+    if (share) {
       e.preventDefault();
-      open();
+      open(null);
+    } else if (report) {
+      e.preventDefault();
+      open('wrong');
     }
   });
   mask.onclick = function (e) { if (e.target === mask) close(); };
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && mask.classList.contains('on')) close();
   });
+
+  addInlineInvite();
+  renderReaderNotes();
 })();
