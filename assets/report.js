@@ -222,6 +222,13 @@
   function close() { mask.classList.remove('on'); }
 
   fab.onclick = open;
+  document.addEventListener('click', function (e) {
+    var trigger = e.target.closest && e.target.closest('[data-open-report]');
+    if (trigger) {
+      e.preventDefault();
+      open();
+    }
+  });
   mask.onclick = function (e) { if (e.target === mask) close(); };
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && mask.classList.contains('on')) close();
