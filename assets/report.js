@@ -56,12 +56,11 @@
   .yp-t b{display:block;font-weight:700}
   .yp-t span{display:block;font-size:12.5px;color:rgba(74,59,42,.5);margin-top:2px}
 
-  .yp-box textarea,.yp-box input{width:100%;font-family:inherit;font-size:15px;color:#4A3B2A;
+  .yp-box textarea{width:100%;font-family:inherit;font-size:15px;color:#4A3B2A;
     background:#fff;border:1.5px solid rgba(150,120,70,.35);border-radius:7px;
     padding:11px 13px;margin-bottom:16px;line-height:1.7;resize:vertical}
   .yp-box textarea{min-height:110px}
-  .yp-box textarea:focus,.yp-box input:focus{border-color:#9E7A34;outline:none}
-  .yp-hint{font-size:12.5px;color:rgba(74,59,42,.5);margin:-11px 0 16px;line-height:1.7}
+  .yp-box textarea:focus{border-color:#9E7A34;outline:none}
 
   .yp-page{background:#F1EADB;border-radius:6px;padding:10px 13px;margin-bottom:18px;
     font-size:12.5px;color:rgba(74,59,42,.6);line-height:1.7;word-break:break-all}
@@ -128,15 +127,12 @@
         '<div class="yp-types">' + typeHtml + '</div>' +
         '<span class="yp-lb">想說的話</span>' +
         '<textarea id="ypMsg" placeholder="不用寫得很完整，想到什麼講什麼就好。"></textarea>' +
-        '<span class="yp-lb">聯絡方式（選填）</span>' +
-        '<input id="ypCt" placeholder="LINE ID 或 Email，方便的話留一下">' +
-        '<p class="yp-hint">留了我可以回覆你查證的結果，不留也沒關係。</p>' +
         '<div class="yp-page">這一頁：' + location.pathname + '</div>' +
         '<div class="yp-btns">' +
           '<button type="button" class="yp-btn yp-cancel" id="ypNo">取消</button>' +
           '<button type="button" class="yp-btn yp-send" id="ypGo" disabled>送出</button>' +
         '</div>' +
-        '<p class="yp-priv">我只會看到你填的內容和頁面網址，不會蒐集其他資料。查證後若採用，會更新在文章裡（不會標示是誰提供的）。</p>' +
+        '<p class="yp-priv">我只會收到回報類型、你填的內容和頁面網址，不會蒐集姓名、聯絡方式或其他個人資料。查證後若採用，會更新在文章裡。</p>' +
       '</div>';
 
     box.querySelectorAll('.yp-t').forEach(function (b) {
@@ -165,7 +161,6 @@
 
   function send() {
     var msg = box.querySelector('#ypMsg').value.trim();
-    var ct = box.querySelector('#ypCt').value.trim();
     var go = box.querySelector('#ypGo');
     go.disabled = true;
     go.textContent = '送出中…';
@@ -174,17 +169,13 @@
       '【網站回報】\n' +
       '類型：' + label(picked) + '\n' +
       '頁面：' + location.href + '\n' +
-      '內容：' + msg +
-      (ct ? '\n聯絡：' + ct : '');
+      '內容：' + msg;
 
     if (CFG.api) {
       var fd = new FormData();
       fd.append('type', label(picked));
       fd.append('page', location.href);
       fd.append('msg', msg);
-      fd.append('contact', ct);
-      fd.append('ts', new Date().toISOString());
-      fd.append('ua', navigator.userAgent.slice(0, 120));
       fetch(CFG.api, { method: 'POST', mode: 'no-cors', body: fd })
         .then(done).catch(done);
     } else {
@@ -212,7 +203,7 @@
   function done(viaLine) {
     var extra = (viaLine === true && !CFG.api)
       ? '<p>內容已經複製起來了，接著會開啟 LINE，貼上傳送給我就可以。</p>'
-      : '<p>我會查證之後更新內容。<br>如果你留了聯絡方式，處理好會跟你說一聲。</p>' +
+      : '<p>我會查證之後更新內容。</p>' +
         '<p style="font-size:13.5px;color:rgba(74,59,42,.55);margin-top:-8px">你花的這幾分鐘，可能會幫到某個正在慌的人。</p>';
     box.innerHTML =
       '<div class="yp-ok">' +
