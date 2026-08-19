@@ -43,11 +43,13 @@ button{font-family:inherit;cursor:pointer}
 .wrap{max-width:640px;margin:0 auto;padding:0 20px}
 
 .top{background:#FBF7EF;border-bottom:1px solid var(--line)}
-.top-in{max-width:640px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:12px}
-.logo{font-family:'Noto Serif TC',serif;font-weight:900;font-size:1.125rem;line-height:1.15}
+.top-in{max-width:960px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.logo{font-family:'Noto Serif TC',serif;font-weight:900;font-size:1.125rem;line-height:1.15;flex-shrink:0}
 .logo small{display:block;font-family:'Noto Sans TC',sans-serif;font-size:0.5938rem;letter-spacing:3px;
   color:var(--gold2);font-weight:400;margin-top:3px}
-.top a.back{margin-left:auto;font-size:0.875rem;color:var(--ink-mute)}
+nav{display:flex;gap:2px;flex-wrap:wrap;margin-left:auto}
+nav a{padding:7px 12px;font-size:0.9062rem;color:var(--ink-mute);border-radius:var(--r);transition:.15s}
+nav a:hover{color:var(--gold2);background:rgba(194,162,78,.09)}
 
 /* 進度 */
 .bar{height:4px;background:var(--band);position:sticky;top:0;z-index:40}
@@ -169,7 +171,12 @@ button{font-family:inherit;cursor:pointer}
 <header class="top">
   <div class="top-in">
     <a class="logo" href="/">50+ 人生選擇權<small>財顧芸．陳芸琪</small></a>
-    <a class="back" href="/">← 回首頁</a>
+    <nav>
+      <a href="/">首頁</a>
+      <a href="/50plus/">系列文章</a>
+      <a href="/ilan-care/">宜蘭長照</a>
+      <a href="/observe/">新聞觀察</a>
+    </nav>
       <div class="fs" role="group" aria-label="字級調整">
         <b>字級</b>
         <button type="button" data-fs="100" aria-pressed="true">A</button>
