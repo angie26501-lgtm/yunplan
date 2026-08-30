@@ -1,0 +1,413 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>收費制財務顧問，價值在哪裡</title>
+<style>
+/* ===================================================================
+   可直接複製 <section class="feesec"> ... </section> 與這段 <style>
+   到您的網站。樣式全部鎖在 .feesec 之下，不影響網站其他區塊。
+   標示 ＿＿ 的地方請自行填入實際收費與聯絡資訊。
+   =================================================================== */
+.feesec{
+  --f-ink:#17222C;
+  --f-muted:#67777F;
+  --f-line:#DFE5E5;
+  --f-deep:#134E5E;
+  --f-deep-soft:#E7F0F2;
+  --f-gold:#C08A2E;
+  --f-gold-soft:#FBF3E4;
+  --f-red:#A93F32;
+  --f-red-soft:#FAEDEB;
+  --f-paper:#F5F7F7;
+  box-sizing:border-box;
+  padding:clamp(38px,7vw,78px) 20px;
+  background:var(--f-paper);
+  color:var(--f-ink);
+  font-family:"Noto Sans TC",-apple-system,BlinkMacSystemFont,"PingFang TC","Microsoft JhengHei",sans-serif;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+.feesec *{box-sizing:border-box}
+.feesec .fw{max-width:960px;margin:0 auto}
+.feesec .feyebrow{
+  display:inline-block;font-size:12px;font-weight:700;letter-spacing:.18em;
+  color:var(--f-gold);background:var(--f-gold-soft);
+  border-radius:4px;padding:4px 11px;margin:0 0 16px;
+}
+.feesec h2{
+  font-size:clamp(24px,4.3vw,37px);font-weight:900;line-height:1.42;
+  margin:0 0 14px;letter-spacing:.01em;
+}
+.feesec h2 em{font-style:normal;color:var(--f-deep)}
+.feesec .flead{
+  font-size:clamp(15px,2.1vw,17px);color:#4A5B64;
+  margin:0 0 clamp(30px,4.5vw,50px);max-width:660px;
+}
+.feesec h3.fsec{
+  font-size:clamp(19px,2.8vw,23px);font-weight:800;margin:0 0 6px;letter-spacing:.01em;
+}
+.feesec .fsub{font-size:14.5px;color:var(--f-muted);margin:0 0 20px;max-width:640px}
+.feesec .fblock{margin-bottom:clamp(38px,5.5vw,64px)}
+
+/* 對照表 */
+.feesec .fcomp{
+  background:#fff;border:1px solid var(--f-line);border-radius:16px;overflow:hidden;
+}
+.feesec .fcomp-row{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--f-line)}
+.feesec .fcomp-row:first-child{border-top:0}
+.feesec .fcomp-cell{padding:16px 20px;font-size:14.5px;line-height:1.75}
+.feesec .fcomp-cell:first-child{border-right:1px solid var(--f-line);background:#FCFCFB}
+.feesec .fcomp-head .fcomp-cell{
+  font-weight:800;font-size:14px;letter-spacing:.05em;padding-top:15px;padding-bottom:15px;
+}
+.feesec .fcomp-head .fcomp-cell:first-child{background:var(--f-red-soft);color:var(--f-red)}
+.feesec .fcomp-head .fcomp-cell:last-child{background:var(--f-deep-soft);color:var(--f-deep)}
+.feesec .fq{
+  font-size:12.5px;font-weight:700;letter-spacing:.06em;color:var(--f-muted);
+  display:block;margin-bottom:5px;
+}
+
+/* 情境卡 */
+.feesec .fcase{
+  background:#fff;border:1px solid var(--f-line);border-radius:16px;
+  padding:24px 24px 20px;margin-bottom:14px;
+}
+.feesec .fcase-t{display:flex;align-items:baseline;gap:11px;margin-bottom:12px;flex-wrap:wrap}
+.feesec .fcase-n{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:11.5px;font-weight:700;letter-spacing:.1em;
+  color:var(--f-deep);background:var(--f-deep-soft);
+  border-radius:5px;padding:3px 9px;
+}
+.feesec .fcase h4{font-size:18px;font-weight:700;margin:0;letter-spacing:.01em}
+.feesec .fline{display:flex;gap:12px;padding:9px 0;border-top:1px dashed #E4EAEA;font-size:14.5px}
+.feesec .fline:first-of-type{border-top:0;padding-top:0}
+.feesec .fline b{
+  flex:0 0 74px;font-size:12.5px;font-weight:700;letter-spacing:.04em;
+  color:var(--f-muted);padding-top:3px;
+}
+.feesec .fline p{margin:0;color:#3F5058;line-height:1.75}
+.feesec .fresult{
+  margin-top:13px;padding:13px 15px;background:var(--f-deep-soft);
+  border-radius:10px;font-size:14px;line-height:1.75;color:#0F3F4C;
+}
+.feesec .fresult b{font-weight:800}
+
+.feesec .fmatch{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.feesec .fm{
+  background:#fff;border:1px solid var(--f-line);border-radius:15px;padding:22px 23px;
+  transition:transform .16s ease, border-color .16s ease, box-shadow .16s ease;
+}
+.feesec .fm:hover{transform:translateY(-3px);border-color:#BBD5DB;box-shadow:0 10px 28px rgba(23,34,44,.07)}
+.feesec .fmn{
+  display:inline-block;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:11.5px;font-weight:700;letter-spacing:.1em;color:var(--f-deep);
+  background:var(--f-deep-soft);border-radius:5px;padding:3px 9px;margin-bottom:11px;
+}
+.feesec .fm h4{font-size:17.5px;font-weight:700;margin:0 0 6px}
+.feesec .fm p{margin:0;font-size:14px;color:#53656E;line-height:1.8}
+@media (max-width:760px){ .feesec .fmatch{grid-template-columns:1fr} }
+/* 進修 */
+.feesec .fstudy{display:grid;grid-template-columns:1.55fr 1fr;gap:14px;align-items:start}
+.feesec .fstudy-main{
+  background:#fff;border:1px solid var(--f-line);border-radius:16px;padding:26px 28px;
+}
+.feesec .fbig{
+  margin:0 0 16px;font-size:clamp(16px,2.3vw,19px);font-weight:700;
+  line-height:1.7;color:var(--f-deep);
+  padding-bottom:16px;border-bottom:1px solid var(--f-line);
+}
+.feesec .fbody{margin:0 0 13px;font-size:14.5px;color:#4A5B64;line-height:1.85}
+.feesec .fbody:last-child{margin-bottom:0}
+.feesec .fbody strong{font-weight:700;color:var(--f-ink);box-shadow:inset 0 -8px 0 var(--f-gold-soft)}
+.feesec .fstudy-side{
+  background:var(--f-deep);color:#fff;border-radius:16px;padding:24px 24px 22px;
+}
+.feesec .fsidet{
+  margin:0 0 15px;font-size:12.5px;font-weight:700;letter-spacing:.14em;color:#8FC0CC;
+}
+.feesec .fitem{padding:11px 0;border-top:1px solid rgba(255,255,255,.16)}
+.feesec .fitem:first-of-type{border-top:0;padding-top:0}
+.feesec .fitem b{display:block;font-size:12.5px;font-weight:600;color:#9BC7D2;margin-bottom:3px}
+.feesec .fitem span{font-size:15px;font-weight:500;letter-spacing:.02em}
+.feesec .fsiden{
+  margin:15px 0 0;padding-top:14px;border-top:1px solid rgba(255,255,255,.16);
+  font-size:12.5px;color:#A8CAD3;line-height:1.75;
+}
+@media (max-width:760px){
+  .feesec .fstudy{grid-template-columns:1fr}
+  .feesec .fstudy-main{padding:20px}
+}
+/* 收費卡 */
+/* 收費方式 */
+.feesec .ffee{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.feesec .ffee-card{
+  background:#fff;border:1px solid var(--f-line);border-radius:14px;padding:21px;
+}
+.feesec .ffee-card h4{font-size:16.5px;font-weight:700;margin:0 0 5px}
+.feesec .ffee-card p{margin:0 0 11px;font-size:13.5px;color:#53656E;line-height:1.75}
+.feesec .fprice{
+  font-size:15px;font-weight:800;color:var(--f-gold);
+  padding-top:11px;border-top:1px solid var(--f-line);
+}
+
+/* 誠實區塊 */
+.feesec .fhonest{
+  background:#fff;border:1px solid var(--f-line);border-left:4px solid var(--f-gold);
+  border-radius:0 14px 14px 0;padding:22px 24px;
+}
+.feesec .fhonest h4{font-size:17px;font-weight:800;margin:0 0 10px}
+.feesec .fhonest ul{margin:0;padding-left:19px}
+.feesec .fhonest li{font-size:14.5px;color:#4A5B64;line-height:1.8;padding:2px 0}
+.feesec .fhonest .fnote{margin:13px 0 0;font-size:14px;color:#3F5058;line-height:1.8}
+
+/* 結尾 */
+.feesec .fclose{
+  background:var(--f-ink);color:#fff;border-radius:16px;
+  padding:clamp(24px,3.6vw,34px);
+  display:flex;flex-wrap:wrap;align-items:center;gap:20px;
+}
+.feesec .fclose .fct{flex:1 1 340px;min-width:0}
+.feesec .fclose p{margin:0;font-size:clamp(16px,2.2vw,19px);font-weight:500;line-height:1.7}
+.feesec .fclose p span{color:#E9B85C}
+.feesec .fclose small{display:block;margin-top:9px;font-size:13.5px;color:#A6B5BC;line-height:1.7}
+.feesec .fbtns{display:flex;flex-wrap:wrap;gap:10px}
+.feesec .fbtn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  text-decoration:none;white-space:nowrap;
+  background:#E9B85C;color:#2A1C00;font-weight:700;font-size:15.5px;
+  padding:14px 26px;border-radius:10px;
+  transition:transform .14s ease, filter .14s ease;
+}
+.feesec .fbtn svg{width:19px;height:19px;flex:0 0 auto}
+.feesec .fbtn.line{background:#06C755;color:#fff}
+.feesec .fbtn.ghost{
+  background:transparent;color:#DCE6EB;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.28);
+}
+.feesec .fbtn.ghost:hover{background:rgba(255,255,255,.07)}
+.feesec .fbtn:hover{transform:translateY(-2px);filter:brightness(1.06)}
+.feesec .fbtn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.feesec .fdisc{
+  margin:26px 0 0;font-size:12.5px;color:var(--f-muted);line-height:1.8;text-align:center;
+}
+
+@media (max-width:760px){
+  .feesec .ffee{grid-template-columns:1fr}
+  .feesec .fcomp-row{grid-template-columns:1fr}
+  .feesec .fcomp-cell:first-child{border-right:0;border-bottom:1px solid var(--f-line)}
+  .feesec .fcomp-head{display:none}
+  .feesec .fcase{padding:20px}
+  .feesec .fline{flex-direction:column;gap:3px}
+  .feesec .fline b{flex:none}
+  .feesec .fclose{flex-direction:column;align-items:flex-start}
+  .feesec .fbtns{width:100%;flex-direction:column}
+  .feesec .fbtn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){ .feesec *{transition:none!important} }
+</style>
+</head>
+<body style="margin:0">
+
+<section class="feesec">
+  <div class="fw">
+
+    <span class="feyebrow">收費制財務顧問</span>
+    <h2>當顧問的收入不來自商品，<br>他才說得出<em>「這個您不用買」</em></h2>
+    <p class="flead">
+      多數人接觸到的財務建議，其實是銷售的一部分。
+      這不代表建議一定不好，但當顧問的收入取決於您買了什麼，
+      「不用買」這三個字就很難說出口。
+      收費制的差別只有一個：付錢的人是您，所以我只需要對您負責。<br>也因為這樣，我才有餘裕把時間花在持續進修上，而不是花在衝件數。
+    </p>
+
+    <!-- 對照 -->
+    <div class="fblock">
+      <h3 class="fsec">同一個問題，兩種答法</h3>
+      <p class="fsub">不是說佣金制的顧問不專業，而是立場不同，答案自然會不同。</p>
+      <div class="fcomp">
+        <div class="fcomp-row fcomp-head">
+          <div class="fcomp-cell">佣金制</div>
+          <div class="fcomp-cell">收費制</div>
+        </div>
+        <div class="fcomp-row">
+          <div class="fcomp-cell"><span class="fq">「我該買儲蓄險嗎？」</span>介紹一張適合您的儲蓄險。</div>
+          <div class="fcomp-cell"><span class="fq">「我該買儲蓄險嗎？」</span>先算它的實質報酬與資金鎖住的年限，再跟其他工具比。結論有可能是「不要買」。</div>
+        </div>
+        <div class="fcomp-row">
+          <div class="fcomp-cell"><span class="fq">「我保障夠了嗎？」</span>檢視後，通常會補上幾張新保單。</div>
+          <div class="fcomp-cell"><span class="fq">「我保障夠了嗎？」</span>先算缺口。可能的結論是保費太高、該減額或停掉某幾張。</div>
+        </div>
+        <div class="fcomp-row">
+          <div class="fcomp-cell"><span class="fq">「錢該放哪？」</span>推薦公司架上有的商品。</div>
+          <div class="fcomp-cell"><span class="fq">「錢該放哪？」</span>包含不經我手的選項——定存、國債、指數型基金、還房貸。</div>
+        </div>
+        <div class="fcomp-row">
+          <div class="fcomp-cell"><span class="fq">服務結束的時間點</span>成交之後。</div>
+          <div class="fcomp-cell"><span class="fq">服務結束的時間點</span>顧問期間內持續檢視，計畫跟著人生階段調整。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 情境 -->
+    <div class="fblock">
+      <h3 class="fsec">三個實際會遇到的情境</h3>
+      <p class="fsub">以下為說明用的示意情境，數字僅供理解概念，實際狀況因人而異。</p>
+
+      <div class="fcase">
+        <div class="fcase-t"><span class="fcase-n">CASE 01</span><h4>保費繳很多，保障卻在缺口上</h4></div>
+        <div class="fline"><b>狀況</b><p>四十歲雙薪家庭，兩人年繳保費約 18 萬，手上十幾張保單，分別來自三位不同的業務員。</p></div>
+        <div class="fline"><b>盤點</b><p>醫療險重複投保、壽險額度遠低於房貸餘額、完全沒有失能扶助。真正的風險——主要收入者失能導致家庭斷炊——沒有被保到。</p></div>
+        <div class="fline"><b>建議</b><p>停掉重複的部分，補上定期壽險與失能險。</p></div>
+        <div class="fresult">調整後年繳保費約 <b>12 萬</b>，保障額度反而提高。省下的 6 萬是每年都省，不是只有一次。</div>
+      </div>
+
+      <div class="fcase">
+        <div class="fcase-t"><span class="fcase-n">CASE 02</span><h4>房貸該不該提前還？</h4></div>
+        <div class="fline"><b>狀況</b><p>手上有一筆閒錢，房貸利率 2.1%，銀行理專建議投入基金，親戚說快還一還比較安心。</p></div>
+        <div class="fline"><b>盤點</b><p>先確認緊急預備金是否足夠、家庭現金流是否穩定、這筆錢五年內會不會用到、風險承受度到哪裡。</p></div>
+        <div class="fline"><b>建議</b><p>可能是全部還、可能是部分還、也可能是都不還。這題沒有標準答案，取決於您的狀況而不是利率高低。</p></div>
+        <div class="fresult">重點不在我推薦哪一個，而在於<b>我沒有任何一個選項會賺到佣金</b>，所以可以純粹就您的狀況討論。</div>
+      </div>
+
+      <div class="fcase">
+        <div class="fcase-t"><span class="fcase-n">CASE 03</span><h4>退休金到底夠不夠</h4></div>
+        <div class="fline"><b>狀況</b><p>五十五歲，勞保勞退加起來心裡沒底，只知道「應該不夠」，但不知道差多少。</p></div>
+        <div class="fline"><b>盤點</b><p>試算勞保年金、勞退專戶、現有資產與預計支出，把缺口算成具體數字與時間點。</p></div>
+        <div class="fline"><b>建議</b><p>缺口如果不大，可能只需調整提撥比例；如果很大，就要同時討論延後退休、降低支出或調整資產配置。</p></div>
+        <div class="fresult">最有價值的產出往往不是商品，而是<b>一個算得出來的數字</b>。知道差多少，才知道要不要焦慮。</div>
+      </div>
+    </div>
+
+    <!-- 媒合窗口 -->
+    <div class="fblock">
+      <h3 class="fsec">顧問真正的價值：<br>媒合對的窗口，替您省下時間</h3>
+      <p class="fsub">財務的問題很少只靠一個人解決，難的是知道該找誰、什麼時候找。</p>
+
+      <div class="fmatch">
+        <div class="fm">
+          <span class="fmn">01</span>
+          <h4>知道該找誰</h4>
+          <p>稅務找會計師、法律找律師、理賠找理賠部、房貸找銀行。問題丟錯窗口，等於白等一週。我幫您判斷這件事該交給誰。</p>
+        </div>
+        <div class="fm">
+          <span class="fmn">02</span>
+          <h4>找得到人</h4>
+          <p>大機構的窗口不一定會回電。案子卡住時，我是那個隨時找得到、會替您追下去的人。</p>
+        </div>
+        <div class="fm">
+          <span class="fmn">03</span>
+          <h4>替您把話講清楚</h4>
+          <p>直接對接承辦人員，用他們懂的語言把您的狀況說完整，您不必反覆打電話重講同一段經過。</p>
+        </div>
+        <div class="fm">
+          <span class="fmn">04</span>
+          <h4>省下的是時間</h4>
+          <p>自己摸索要打十通電話、跑三趟、試錯兩個月。您的時間有更值得用的地方。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 進修 -->
+    <div class="fblock">
+      <h3 class="fsec">一個願意持續進修的顧問，<br>對保戶來說是一種幸福</h3>
+      <p class="fsub">這句話聽起來像客套，但它有很實際的意思。</p>
+
+      <div class="fstudy">
+        <div class="fstudy-main">
+          <p class="fbig">法規每年在改，稅制每年在調，商品每年在換。<br>
+          顧問如果停止學習，他給的建議，就停在他考上證照的那一年。</p>
+          <p class="fbody">
+            我看過太多這樣的狀況：保單是十年前買的，當年或許合適，
+            但這十年裡稅法改過、醫療給付的定義改過、實支實付的認定也改過，
+            而當初賣他保單的人，早就不在這個行業了，或是從沒回來檢視過。
+          </p>
+          <p class="fbody">
+            進修不是為了牆上多掛一張證書。是為了當您問我一個問題時，
+            我給的答案是<strong>今年的版本</strong>，不是十年前的。
+          </p>
+          <p class="fbody">
+            這也是收費制真正的意義之一。當收入不必靠成交件數堆出來，
+            我才有餘裕把時間投在讀法規、上課、研究實際案例上——
+            而這些時間，最後都會回到您身上。
+          </p>
+        </div>
+
+        <div class="fstudy-side">
+          <p class="fsidet">我的進修紀錄</p>
+          <div class="fitem"><b>持有證照</b><span>＿＿＿＿＿＿＿＿＿＿</span></div>
+          <div class="fitem"><b>年度進修時數</b><span>＿＿ 小時／年</span></div>
+          <div class="fitem"><b>近期進修主題</b><span>＿＿＿＿＿＿＿＿＿＿</span></div>
+          <p class="fsiden">這一欄我會持續更新。您隨時可以問我最近在學什麼，以及為什麼要學這個。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 收費 -->
+    <div class="fblock">
+      <h3 class="fsec">收費方式</h3>
+      <p class="fsub">費用透明、事前確認，不會事後追加。</p>
+      <div class="ffee">
+        <div class="ffee-card">
+          <h4>單次諮詢</h4>
+          <p>針對單一問題討論，例如保單健檢、房貸取捨、單筆資金安排。</p>
+          <div class="fprice">＿＿＿ 元／小時</div>
+        </div>
+        <div class="ffee-card">
+          <h4>專案規劃</h4>
+          <p>完整盤點財務現況，產出書面規劃報告，含後續兩次調整討論。</p>
+          <div class="fprice">＿＿＿ 元／案</div>
+        </div>
+        <div class="ffee-card">
+          <h4>年度顧問</h4>
+          <p>全年隨時諮詢，定期檢視，重大決策前先討論過再做。</p>
+          <div class="fprice">＿＿＿ 元／年</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 誠實 -->
+    <div class="fblock">
+      <div class="fhonest">
+        <h4>什麼情況下，您不需要付費找我</h4>
+        <ul>
+          <li>財務狀況單純、收支穩定、沒有負債，也已經有固定的儲蓄與投資習慣</li>
+          <li>只想買一張明確的保單，而且已經清楚知道自己要什麼</li>
+          <li>願意花時間自己研究，而且享受這個過程</li>
+          <li>手上可運用的資金規模還小，顧問費占比過高</li>
+        </ul>
+        <p class="fnote">
+          這幾種狀況我會直接告訴您不必花這筆錢。
+          會這樣寫，是因為如果連「您不需要我」都說不出口，
+          前面講的那些立場中立，就只是漂亮話而已。
+        </p>
+      </div>
+    </div>
+
+    <div class="fclose">
+      <div class="fct">
+        <p>第一次談，<span>先聊清楚您的問題適不適合。</span></p>
+        <small>初次諮詢＿＿分鐘不收費，我們一起確認您現在的狀況需不需要顧問服務。<br>加 LINE 直接問也可以，如果不需要顧問服務，我會直接說。</small>
+      </div>
+      <div class="fbtns">
+        <a class="fbtn line" href="https://line.me/R/ti/p/@＿＿＿＿" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.5 2 2 5.7 2 10.2c0 4 3.6 7.4 8.4 8.1.3.07.8.22.9.5.1.26.06.66.03.92l-.14.87c-.04.26-.2 1 .9.55 1.1-.46 5.9-3.5 8-6h0c1.5-1.6 2.2-3.3 2.2-5.1C22 5.7 17.5 2 12 2z"/></svg>
+          加 LINE 詢問
+        </a>
+        <a class="fbtn ghost" href="#">預約初次諮詢</a>
+      </div>
+    </div>
+
+    <p class="fdisc">
+      本頁內容為財務顧問服務之說明，不構成任何投資、保險或稅務之個別建議，亦不保證特定成果。<br>
+      情境舉例為說明概念之示意，實際規劃結果因個人狀況而異。實際服務範圍與費用以雙方書面約定為準。
+    </p>
+
+  </div>
+</section>
+
+</body>
+</html>
