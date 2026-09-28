@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>【公版】超級助理使用說明｜三步驟查自己的保單</title>
+<style>
+:root{--ink:#1f2d33;--sub:#5b6b72;--line:#d5dfe2;--paper:#f6f9f9;--card:#fff;--deep:#1d5a6e;--mist:#dcebef;--amber:#b7791f;--amberbg:#fbf3e4;--green:#06C755;--gdeep:#1f6b33;--red:#c0392b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;line-height:1.8;font-size:16px}
+.vband{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:13px;padding:7px 16px;border-bottom:1px solid #b7791f;background:#fbf3e4;color:#5a4012}
+.vband .vk{font-weight:700;border-radius:999px;padding:1px 11px;background:rgba(255,255,255,.75)}
+.vband .vn{flex:1;min-width:120px}
+.vband .vv{font-family:ui-monospace,Consolas,monospace;font-size:12.5px;opacity:.85}
+.wrap{max-width:760px;margin:0 auto;padding:24px 18px 70px}
+.brand{font-family:"Noto Serif TC",serif;color:var(--amber);letter-spacing:.08em;font-size:14px;margin:0}
+h1{font-family:"Noto Serif TC","Songti TC",serif;color:var(--deep);font-size:28px;margin:6px 0 8px;text-wrap:balance}
+.lead{font-size:17px}
+p{margin:8px 0}
+.sub{color:var(--sub);font-size:14px}
+
+.step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:18px 0 0;position:relative}
+.step>.n{position:absolute;top:-14px;left:18px;width:30px;height:30px;border-radius:50%;background:var(--deep);color:#fff;
+ font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px}
+.step h2{font-family:"Noto Serif TC",serif;color:var(--deep);font-size:20px;margin:6px 0 8px;border:none;padding:0}
+.step .do{background:var(--mist);border-radius:10px;padding:10px 14px;margin:10px 0 0;font-size:15px}
+.step .do b{color:var(--deep)}
+
+.lineBtn{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-weight:700;background:var(--green);color:#fff;
+ border-radius:999px;padding:12px 24px;font-size:16px;margin-top:6px}
+.lineBtn:hover{filter:brightness(1.07)}
+.joinrow{display:grid;grid-template-columns:1fr 140px;gap:18px;align-items:center}
+.qr{text-align:center}
+.qr img{width:100%;max-width:140px;height:auto;background:#fff;border-radius:10px;border:1px solid var(--line);padding:6px}
+.qr span{display:block;font-size:12px;color:var(--sub);margin-top:5px}
+
+/* 選單示意 */
+.menu{background:#f4efe6;border:1px solid #e0d6c4;border-radius:12px;padding:8px;margin:12px 0 0;
+ display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.tile{background:#fdfaf4;border:1px solid #e6dcc9;border-radius:9px;padding:12px 8px;text-align:center;font-size:13px;
+ color:#6b5a3e;line-height:1.5;min-height:84px;display:flex;flex-direction:column;justify-content:center;gap:2px}
+.tile .ic{font-size:20px}
+.tile .sm{font-size:10.5px;opacity:.75;display:block}
+.tile b{font-size:13.5px;color:#4a3d28}
+.tile.hit{background:#fff;border:3px solid var(--red);box-shadow:0 0 0 4px rgba(192,57,43,.13)}
+.tile.hit b{color:var(--red)}
+.tile.t2,.tile.t3{background:#fff;border-color:#bcd6c7}
+.cap{font-size:13px;color:var(--sub);margin:8px 0 0;text-align:center}
+.cap b{color:var(--red)}
+
+/* 卡片示意 */
+.pcard{max-width:330px;margin:12px auto 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.pcard .top{background:#3ea55a;color:#fff;font-weight:700;font-size:17px;padding:9px 14px}
+.pcard .bd{padding:10px 14px;font-size:13.5px}
+.pcard .r{display:grid;grid-template-columns:80px 1fr;gap:8px;padding:4px 0;border-bottom:1px dashed #eee}
+.pcard .r:last-of-type{border-bottom:none}
+.pcard .r span{color:var(--sub)}
+.pcard .b1{display:block;text-align:center;background:#2f8ce0;color:#fff;font-weight:700;border-radius:8px;padding:9px;margin:10px 14px 6px;font-size:14.5px}
+.pcard .b2{display:block;text-align:center;background:#e4e6e8;color:#3a4247;font-weight:700;border-radius:8px;padding:9px;margin:0 14px 14px;font-size:14.5px;
+ outline:3px solid var(--red);outline-offset:2px}
+
+.faq{background:var(--card);border-left:5px solid var(--amber);border-radius:0 12px 12px 0;padding:14px 18px;margin:18px 0 0}
+.faq h3{font-size:16px;margin:12px 0 2px;color:#8a5a12}
+.faq h3:first-child{margin-top:0}
+.faq p{font-size:15px;margin:2px 0 0}
+.disc{font-size:12.5px;color:var(--sub);line-height:1.85;margin:26px 0 0;padding-top:16px;border-top:1px solid var(--line)}
+@media(max-width:620px){.joinrow{grid-template-columns:1fr}.qr{max-width:160px;margin:0 auto}h1{font-size:24px}}
+</style>
+</head>
+<body>
+<div class="vband"><span class="vk">公版</span><span class="vn">超級助理使用說明（保戶版）</span><span class="vv">v1.0 ・ 2026/09/29（台灣時間）</span></div>
+<div class="wrap">
+<p class="brand">財顧芸　陳芸琪　｜　馥芸財富學苑</p>
+<h1>三步驟，查自己的保單</h1>
+<p class="lead">不用翻紙本、不用等上班時間。加入一次，以後隨時想查就查。</p>
+
+<div class="step">
+  <span class="n">1</span>
+  <h2>加入「超級助理」好友</h2>
+  <div class="joinrow">
+    <div>
+      <p>手機直接點下面的按鈕；電腦上看的話，用手機掃右邊的 QR Code。</p>
+      <a class="lineBtn" href="https://lin.ee/TTQDQIA" target="_blank" rel="noopener">👉 加入超級助理</a>
+      <p class="sub" style="margin-top:8px">帳號名稱：財顧芸｜陳芸琪的 AI 神助理</p>
+    </div>
+    <div class="qr"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMsAAADLCAIAAABPmfBkAAADRUlEQVR42u3d0XGcMBSGUa+HFtKGq3GZqSZtpAjSgB+kXH5dwZ7z7N0A+UYaNKB9nef5ATGfLgEKQ2GgMBSGwkBhKAyFgcJQGCgMhXFrx/if/vr+2u3o//7+s9tx/nhI49dzwzMqnqYxDLMkCgOFoTAUBrOO4ufH71qLxu/YE+sF4x8f/87ipdvwyhvDMEuiMFAYCkNhcIkj8aXF+9tl9+HjBz++3FBcwnjelTeGYZZEYaAwFIbCYNbxvFNKLA0sW24whoHCUBgKA4WhMDhcgv9WfDnlTVZAjGEoDIWBwlAYCoNZkdWKu9xyJ7a0HD/3xFXa8Mobw1AYCgOFoTAUBrOqqxUb/lxF8eCLz0Ek/vLWV94YhsJQGCgMhaEwmPU6z/Nhp5T4ZVDbXhjDUBgKA4WhMFAYy0w8W9G7e+WyRwkSP4Dae0bLTtMYhlkShYHCUBgKg0tMrFb0vqTwJq9dJFZ/ih8vHpIxDLMkCgOFoTAUBrMm3gRZ9t5E8UZ62TaZvQefWGpJnLsxDLMkCgOFoTAUBrOq+1b07siw4csUyy5I4vdTxz9uDMMsicJAYSgMhUFO9dmKxJ1w7/MFxeNM/GXiOIvsW4FZEoWBwlAYCoOcyJsgCct2o1i23ND7ykni48YwzJIoDBSGwlAYXCLyC6a33nxh2cE/b49PYxhmSRQGCkNhKAwu0bxakVgFGP/ODVdVen9OpXjuxjDMkigMFIbCUBhcYuIXTHvv7Xs3X9hwK43e/zhjGGZJFAYKQ2EoDHIiz1b0SuxGkVgFSGwS0fsTLcYwFIbCQGEoDIXBJSLPVixTvA/v/XjxyveuQRjDUBgKA4WhMBQGOUfx87137MsOadnzGokz8gummCVBYSgMhYHCuJcj8aXLdtnsvTlP/EMbPsBiDENhKAwUhsJAYSx2PO+UNny2oneDjOJ3GsMwS6IwUBgKA4Wx2PEm51lcbije8CcezSguTCx7jcUYhlkShYHCUBgKg1mR1YoNN4AsrhcU7+0Tz1YUFzs8W4FZEhSGwlAYKIxtVVcrNtxn4dbvTRSPM3GVikstxjDMkigMFIbCUBjMep3n6SpgDENhoDAUhsJAYSgMhYHCUBgKA4WhMPjZP1eRhTf/uSAaAAAAAElFTkSuQmCC" alt="超級助理 LINE 官方帳號 QR Code"><span>手機掃描加入</span></div>
+  </div>
+</div>
+
+<div class="step">
+  <span class="n">2</span>
+  <h2>手機驗證</h2>
+  <p>加好友之後，畫面<b>最下面會有一個選單</b>（看不到的話，點左下角的鍵盤圖示旁邊的「選單」）。</p>
+  <p>點<b style="color:var(--red)">左上角那一格「手機驗證」</b>，輸入你的手機號碼。</p>
+  <div class="menu"><div class="tile hit"><span class="ic">📱</span><span class="sm">保戶／財顧客戶</span><b>手機驗證</b></div>
+<div class="tile t2"><span class="ic">🚗</span><span class="sm">查詢我的</span><b>產險</b></div>
+<div class="tile t3"><span class="ic">📋</span><span class="sm">查詢我的</span><b>壽險・醫療險・投資型</b></div>
+<div class="tile "><span class="ic">💼</span><span class="sm">專業陪伴 航向幸福人生</span><b>管理員界面</b></div>
+<div class="tile "><span class="ic">🩺</span><b>熱門話題保單</b></div>
+<div class="tile "><span class="ic">🗼</span><b>保戶訊息與服務</b></div></div>
+  <p class="cap">選單長這樣——要點的是<b>左上角</b>那一格</p>
+  <div class="do"><b>驗證只做一次。</b>系統核對的是你本人的手機號碼，之後查詢都認這支號碼。</div>
+</div>
+
+<div class="step">
+  <span class="n">3</span>
+  <h2>查自己的保單</h2>
+  <p>驗證完成後，回到同一個選單，看你要查哪一種：</p>
+  <div class="do">
+    🚗 <b>查詢我的產險</b>：車險、機車、旅平險這一類<br>
+    📋 <b>查詢我的壽險・醫療險・投資型</b>：壽險、醫療、意外、投資型保單
+  </div>
+  <p style="margin-top:10px">點下去就會跳出你的保單卡片，上面有<b>保險公司、保單號碼、保費、到期日</b>，快到期的還會用紅色標「幾天後到期」。</p>
+</div>
+
+<div class="step">
+  <span class="n">＋</span>
+  <h2>如果我有做規劃書，要去哪裡看？</h2>
+  <p>規劃書的連結放在<b>「查詢我的產險」</b>裡面，有一張<b>「超級助理」</b>的卡片。</p>
+  <p>點卡片下面<b style="color:var(--red)">灰色</b>那顆「<b>強制險收據／其他連結</b>」，就會打開你的專屬報告書。</p>
+  <div class="pcard">
+    <div class="top">364天後到期</div>
+    <div class="bd">
+      <div class="r"><span>產險公司</span><b>超級助理</b></div>
+      <div class="r"><span>保單號碼</span>請點選下方灰色選項，您將可查看專屬人生財務設計藍圖報告書</div>
+      <div class="r"><span>車主</span>（你的名字）</div>
+      <div class="r"><span>備註</span>個資請勿轉傳或轉貼群組</div>
+    </div>
+    <span class="b1">我想詢問保單內容</span>
+    <span class="b2">強制險收據／其他連結</span>
+  </div>
+  <p class="cap">點<b>灰色</b>那一顆</p>
+  <div class="do">報告書要輸入密碼，是<b>你的生日月日四碼</b>。同一支手機輸入一次，三十天內不用再打。<b>忘記密碼直接問我。</b></div>
+</div>
+
+<div class="faq">
+<h3>Q：為什麼查詢入口在「產險」裡面？我沒有產險啊</h3>
+<p>那只是系統選單的位置。壽險、醫療、投資型都查得到，在旁邊那一格。規劃書則固定放在產險那一區。</p>
+<h3>Q：驗證過了，為什麼又要我驗證一次？</h3>
+<p>目前是測試階段，偶爾需要重新核對。如果遇到，跟我說一聲就好。</p>
+<h3>Q：查不到我的保單？</h3>
+<p>建檔是我手動做的，新保戶可能還沒建好。直接在 LINE 跟我說，我補上去。</p>
+<h3>Q：我的資料安全嗎？</h3>
+<p>驗證資料只用來核對你本人的保單，不會另作他用。查詢結果也只會回給你自己 🙏</p>
+</div>
+
+<p style="margin-top:18px">用起來有任何問題，<b>直接在 LINE 跟我說</b>就好。更多功能會陸續加上去。</p>
+
+<div class="disc">
+<p>本頁為超級助理（LINE 官方帳號）使用說明。保單查詢結果僅供參考，實際權利義務以<b>保單條款與保險公司正式文件</b>為準。</p>
+<p>財顧芸 陳芸琪｜馥芸財富學苑</p>
+</div>
+</div>
+</body>
+</html>
