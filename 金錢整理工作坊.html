@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="zh-Hant-TW"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>金錢整理工作坊｜財顧芸</title>
+<style>
+:root{--gold:#FFC850;--gold2:#E9A92A;--brown:#8B6F4E;--brown2:#5E4A33;--cream:#FFF7E6;--c1:#FFEFD2;--blue:#1E6FB8;--red:#A3182A;--green:#3d7a55;--ink:#2d2a26;--muted:#6b6259;--line:#e8dfcf}
+*{box-sizing:border-box}
+body{margin:0;background:#e9e4dc;color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;font-size:15.5px;line-height:1.8}
+a{color:var(--blue)}
+.vband{position:sticky;top:0;z-index:20;background:var(--brown2);color:#fff;font-size:13px;padding:6px 14px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.wrap{max-width:900px;margin:0 auto;padding:18px 12px 60px}
+.page{background:#fff;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.08);padding:28px 36px 30px;margin-bottom:20px}
+.ph{display:flex;align-items:center;margin:0 -8px 16px}
+.ph .arrow{width:88px;height:22px;background:linear-gradient(90deg,#4a3a28,var(--brown));clip-path:polygon(0 0,86% 0,100% 50%,86% 100%,0 100%)}
+.ph .bar{flex:1;height:14px;background:linear-gradient(90deg,var(--gold2),var(--gold));border-radius:0 8px 8px 0;margin-left:-6px}
+h2{color:var(--blue);font-size:21px;letter-spacing:.06em;margin:4px 0 12px}
+h3{color:var(--brown2);font-size:16.5px;margin:18px 0 6px}
+p{margin:6px 0}
+.small{font-size:13px;color:var(--muted)}
+/* hero */
+.hero{background:linear-gradient(135deg,#5E4A33 0%,#8B6F4E 60%,#a98b62 100%);color:#fff;border-radius:12px;padding:34px 34px 30px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(255,200,80,.35),rgba(255,200,80,0) 70%)}
+.hero .tag{display:inline-block;background:var(--gold);color:var(--brown2);font-weight:800;font-size:13px;border-radius:999px;padding:2px 12px;letter-spacing:.08em}
+.hero h1{font-size:34px;letter-spacing:.14em;margin:12px 0 4px;line-height:1.3}
+.hero .lead{font-size:18px;color:#ffe9bf;margin:0 0 14px}
+.hero .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;position:relative;z-index:1}
+.hero .chips span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:8px;padding:4px 12px;font-size:14px}
+.value{display:flex;flex-wrap:wrap;gap:12px;align-items:stretch;margin:18px 0 4px}
+.value .v{flex:1 1 220px;background:var(--cream);border:1px solid #f0dfb8;border-radius:10px;padding:12px 16px}
+.value .v b{display:block;font-size:22px;color:var(--brown2)}
+.value .v.gift{background:#FFF0EC;border-color:#f3c9bf}.value .v.gift b{color:var(--red)}
+/* outcomes */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.card{border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:#fff}
+.card .ic{font-size:26px;line-height:1}
+.card h4{margin:6px 0 4px;color:var(--brown2);font-size:16px}
+.card p{font-size:14px;color:#4a453e;margin:0}
+/* flow */
+.flow{counter-reset:s;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:6px}
+.flow .st{position:relative;background:var(--cream);border-radius:10px;padding:34px 12px 12px;text-align:center}
+.flow .st:before{counter-increment:s;content:counter(s);position:absolute;top:-14px;left:50%;transform:translateX(-50%);width:32px;height:32px;border-radius:50%;background:var(--gold2);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 4px #fff}
+.flow .st b{display:block;color:var(--brown2);font-size:15.5px}
+.flow .st span{font-size:13.5px;color:#4a453e}
+.flow .st em{display:block;font-style:normal;font-size:12px;color:var(--muted);margin-top:4px}
+/* agenda */
+table.ag{width:100%;border-collapse:separate;border-spacing:0 6px}
+table.ag td{background:#faf7f1;padding:10px 14px;vertical-align:top}
+table.ag td:first-child{border-radius:8px 0 0 8px;width:150px;font-weight:800;color:var(--brown2);white-space:nowrap}
+table.ag td:last-child{border-radius:0 8px 8px 0}
+table.ag small{display:block;color:var(--muted);font-size:13px}
+/* prep */
+.prep{border:2px dashed var(--gold2);border-radius:12px;padding:16px 20px;background:#fffdf7}
+.prep ul{margin:6px 0 10px;padding-left:22px}.prep li{margin:3px 0}
+.dl{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;font-weight:800;border-radius:10px;padding:10px 18px;margin:4px 8px 4px 0}
+.dl.line{background:#06A34A}
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fit div{border-radius:10px;padding:12px 16px}
+.fit .y{background:#EEF6F0;border:1px solid #cfe3d5}.fit .n{background:#f4f2ee;border:1px solid #e2ddd3}
+.fit h4{margin:0 0 4px;font-size:15.5px}.fit ul{margin:0;padding-left:20px}.fit li{font-size:14.5px}
+.info{width:100%;border-collapse:collapse}
+.info td{border-bottom:1px solid #efe8db;padding:9px 10px;vertical-align:top}
+.info td:first-child{width:22%;font-weight:800;color:var(--brown2);background:#fdf8ee}
+.tbd{display:inline-block;font-size:12px;color:#6b6259;background:#eee;border-radius:999px;padding:0 8px;margin-left:4px}
+details{border:1px solid var(--line);border-radius:10px;padding:8px 14px;margin:8px 0;background:#fff}
+summary{cursor:pointer;font-weight:700;color:var(--brown2)}
+details p{font-size:14.5px;color:#4a453e}
+.stance{border-left:6px solid var(--brown2);background:#fbf8f2;border-radius:8px;padding:12px 18px}
+.cta{display:flex;gap:18px;align-items:center;background:linear-gradient(135deg,#5E4A33,#8B6F4E);color:#fff;border-radius:12px;padding:20px 24px}
+.cta .t{flex:1}.cta h3{color:#fff;margin:0 0 4px}.cta p{color:#f3e6cf;font-size:14.5px}
+.cta .qr{background:#fff;border-radius:10px;padding:8px;text-align:center;color:var(--brown2);font-size:12px;text-decoration:none}
+.cta .qr img{width:120px;height:120px;display:block}
+.sig{margin-top:18px;font-size:14px;color:var(--brown2);line-height:1.7}
+.sig b{font-size:15.5px}
+.disc{margin-top:14px;font-size:12px;color:#8a8278;border-top:1px solid #eee;padding-top:10px;line-height:1.7}
+@media (max-width:720px){
+ .page{padding:20px 16px 22px}.hero{padding:26px 20px}.hero h1{font-size:27px}
+ .grid{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr;row-gap:22px}.fit{grid-template-columns:1fr}
+ table.ag td:first-child{width:auto;white-space:normal}.cta{flex-direction:column;align-items:flex-start}
+ .info td:first-child{width:32%}}
+@media print{body{background:#fff}.vband{position:static}.page{box-shadow:none;break-inside:avoid-page}.dl{border:1px solid #333}}
+</style></head>
+<body>
+<div class="vband"><span>金錢整理工作坊｜課程介紹</span><span>v1.0・2026/10/09（民國115年10月9日）</span></div>
+<div class="wrap">
+
+<section class="page">
+<div class="hero">
+ <span class="tag">實體課・小班制</span>
+ <h1>金錢整理工作坊</h1>
+ <p class="lead">帶著自己的數字來，帶著自己的財務健診報告書回家。</p>
+ <p style="position:relative;z-index:1;max-width:620px">一個下午，把散在各個帳戶、帳單與保單裡的數字，整理成一份看得懂的家庭財務體質報告——收支、資產負債、儲蓄能力與保障預算，一次看清楚。</p>
+ <div class="chips"><span>📋 課前填寫 AI 健診系統四表</span><span>🧮 課堂逐表核對</span><span>📊 產出個人財務健診報告書</span><span>🧭 帶走下一步行動清單</span></div>
+</div>
+<div class="value">
+ <div class="v"><span class="small">課程價值</span><b>3,600 元／人</b><span class="small">含 AI 財務健診報告書電子檔一份</span></div>
+ <div class="v gift"><span class="small">幸福財務年度顧問</span><b>🎁 加贈參加</b><span class="small">年度顧問會員免費參加一次</span></div>
+</div>
+</section>
+
+<section class="page">
+<div class="ph"><span class="arrow"></span><span class="bar"></span></div>
+<h2>為什麼要先整理錢？</h2>
+<div class="stance">
+<p>多數家庭不缺理財資訊，缺的是一張<b>自己家的財務全景圖</b>。收入、固定支出、貸款、存款、投資、保單分散在不同地方，數字從來沒有放在一起看過，任何決定都像在霧裡開車。</p>
+<p>這堂工作坊不談商品、不推薦標的，專注在一件事：<b>把您自己的數字整理清楚，用專業指標讀懂它</b>。整理完成的報告書，就是之後做保障規劃、退休準備與資產配置的共同起點。</p>
+</div>
+</section>
+
+<section class="page">
+<div class="ph"><span class="arrow"></span><span class="bar"></span></div>
+<h2>上完課，您會帶走什麼</h2>
+<div class="grid">
+ <div class="card"><div class="ic">📊</div><h4>一份自己的財務健診報告書</h4><p>以您填寫的四表為基礎，經 AI 輔助彙整、顧問核對後產出的個人化報告書電子檔。</p></div>
+ <div class="card"><div class="ic">🧾</div><h4>家庭收支表＋資產負債表</h4><p>每月錢從哪裡來、往哪裡去；家裡的資產與負債各有多少，淨值是多少。</p></div>
+ <div class="card"><div class="ic">🩺</div><h4>看懂財務體質指標</h4><p>儲蓄率、負債比、緊急預備金月數、保費占收入比等關鍵指標，知道自己落在哪個區間。</p></div>
+ <div class="card"><div class="ic">🧭</div><h4>下一步行動清單</h4><p>依報告結果排出先後順序：哪一項先調整、哪一項可以再觀察。</p></div>
+ <div class="card"><div class="ic">🗂</div><h4>可以持續使用的整理表</h4><p>課後每年更新一次數字，就能追蹤自己的財務體質變化。</p></div>
+ <div class="card"><div class="ic">💬</div><h4>現場提問與解讀</h4><p>報告上看不懂的地方，課堂上當場問、當場說明。</p></div>
+</div>
+</section>
+
+<section class="page">
+<div class="ph"><span class="arrow"></span><span class="bar"></span></div>
+<h2>從填表到報告書：四個步驟</h2>
+<div class="flow">
+ <div class="st"><b>課前填表</b><span>下載 AI 健診系統四表，填入自己的數字</span><em>約 30～60 分鐘</em></div>
+ <div class="st"><b>回傳表格</b><span>課前回傳給財顧芸，以利進行製作報告書</span><em>課前 3 天前 <span class="tbd">待確認</span></em></div>
+ <div class="st"><b>課堂整理</b><span>逐表核對數字、補齊缺漏，認識每一項指標</span><em>實體課現場</em></div>
+ <div class="st"><b>報告書解讀</b><span>產出個人財務健診報告書，一起讀懂結果與下一步</span><em>電子檔交付</em></div>
+</div>
+
+<h3>課堂大綱</h3>
+<table class="ag">
+ <tr><td>單元一｜金錢地圖</td><td>收入、固定支出、變動支出怎麼分類；找出每月真正可運用的結餘。<small>對應：家庭收支表</small></td></tr>
+ <tr><td>單元二｜家底盤點</td><td>存款、投資、不動產、保單價值與各項貸款，算出家庭淨值。<small>對應：資產負債表</small></td></tr>
+ <tr><td>單元三｜體質檢測</td><td>用專業指標替家庭財務量體溫：儲蓄能力、負債壓力、預備金、保障預算。<small>對應：財務健診指標</small></td></tr>
+ <tr><td>單元四｜報告書解讀</td><td>拿到自己的 AI 財務健診報告書，逐頁說明怎麼讀、數字代表什麼。</td></tr>
+ <tr><td>單元五｜行動清單</td><td>依結果排出優先順序，寫下自己接下來 3 個月可以做的事。</td></tr>
+</table>
+</section>
+
+<section class="page">
+<div class="ph"><span class="arrow"></span><span class="bar"></span></div>
+<h2>課前準備</h2>
+<div class="prep">
+<p><b>📋 AI 健診系統四表</b>：請填寫這份表格，再回傳給財顧芸，以利進行製作 AI 財務健診報告書。</p>
+<a class="dl" href="https://1drv.ms/x/c/b2180b8c6d51e694/ERmD6BYWht9KlSkaUFa56AwBpOJ9LCGada1JfvCGjHx8Sw?e=ZCq9Ft" target="_blank" rel="noopener">⬇ 下載 AI 健診系統四表（Excel）</a>
+<a class="dl line" href="https://lin.ee/N0W2zsz" target="_blank" rel="noopener">💬 填好後用 LINE@ 回傳</a>
+<p class="small">建議下載一份到自己的電腦或手機再填寫；不確定的欄位先空著，課堂上一起補。</p>
+<h3>填表時可以準備</h3>
+<ul>
+ <li>近 3～6 個月的薪資單或入帳紀錄、信用卡帳單</li>
+ <li>各銀行帳戶、投資帳戶的目前餘額</li>
+ <li>房貸、車貸、信貸的未償還本金與每月應繳金額</li>
+ <li>保單繳費資料（每年保費、繳費年期）</li>
+ <li>房租、學費、孝親費等固定支出</li>
+</ul>
+</div>
+</section>
+
+<section class="page">
+<div class="ph"><span class="arrow"></span><span class="bar"></span></div>
+<h2>適合誰來上</h2>
+<div class="fit">
+ <div class="y"><h4>✅ 很適合您，如果</h4><ul>
+  <li>每個月都有收入，卻說不清楚錢去了哪裡</li>
+  <li>想規劃保障或退休，但不知道預算該抓多少</li>
+  <li>家裡帳戶、保單很多，從沒放在一起看過</li>
+  <li>想和另一半用同一份數字討論家庭財務</li>
+ </ul></div>
+ <div class="n"><h4>ℹ️ 這堂課不包含</h4><ul>
+  <li>個別商品推薦或投資標的建議</li>
+  <li>保單條款逐張解析（可另選保單現況盤點）</li>
+  <li>稅務、法律意見（可協助媒合專業窗口）</li>
+ </ul></div>
+</div>
+</section>
+
+<section class="page">
+<div class="ph"><span class="arrow"></span><span class="bar"></span></div>
+<h2>課程資訊</h2>
+<table class="info">
+ <tr><td>課程形式</td><td>實體課，小班制</td></tr>
+ <tr><td>日期／時間</td><td>⚪ 待公告<span class="tbd">待確認</span></td></tr>
+ <tr><td>地點</td><td>⚪ 待公告<span class="tbd">待確認</span></td></tr>
+ <tr><td>人數</td><td>⚪ 待公告<span class="tbd">待確認</span></td></tr>
+ <tr><td>課程價值</td><td>3,600 元／人（含 AI 財務健診報告書電子檔一份）</td></tr>
+ <tr><td>年度顧問會員</td><td>幸福財務年度顧問會員，<b>加贈參加一次</b></td></tr>
+ <tr><td>請攜帶</td><td>填好的四表（或手邊的帳單與存摺資料）、筆電或平板（可選）</td></tr>
+</table>
+</section>
+
+<section class="page">
+<div class="ph"><span class="arrow"></span><span class="bar"></span></div>
+<h2>常見問題</h2>
+<details><summary>我對數字不敏感，跟得上嗎？</summary><p>可以。四表的每個欄位都有說明，課堂上會一欄一欄帶著整理；需要計算的地方由系統與顧問協助，您只要提供數字。</p></details>
+<details><summary>填表時有些數字不確定怎麼辦？</summary><p>先填大概的數字或空著，在備註寫下「不確定」。課堂上會一起核對，報告書也會標示哪些是您提供的數字、哪些是推估。</p></details>
+<details><summary>我的財務資料會怎麼處理？</summary><p>您回傳的表格只用於製作您本人的報告書；報告書以化名呈現，不會公開，也不會提供給第三方。</p></details>
+<details><summary>課堂上會推銷商品嗎？</summary><p>不會。工作坊的目的是把現況整理清楚；之後要不要調整、找誰辦理，都由您自己決定。</p></details>
+<details><summary>可以和另一半一起參加嗎？</summary><p>很推薦。家庭財務最好用同一份數字一起看；家庭報名方式請私訊財顧芸 LINE@。</p></details>
+</section>
+
+<section class="page">
+<div class="cta">
+ <div class="t"><h3>想報名，或先了解自己適不適合？</h3><p>加入 LINE@ 留言「金錢整理工作坊」，財顧芸會回覆您開課時間與報名方式。</p>
+ <a class="dl line" href="https://lin.ee/N0W2zsz" target="_blank" rel="noopener" style="margin-top:8px">💬 加入 LINE@ 詢問</a></div>
+ <a class="qr" href="https://lin.ee/N0W2zsz" target="_blank" rel="noopener"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOgAAADoAQAAAADN0pXVAAABR0lEQVR4nO2YO3IDMQxDAY/vf+WXgqRWk8JFtB9G43WzFgoDpgSCMvrwvD6BX/QfoKIKjER8xgo9Oa+gb0lIkkOwzLHSlPOqXjmUSli43h9kdbHeeHIb4+dZ3aI3C9yB1cV6o7LG1DeeZXWt3qmmxpix0pPzCmrmd5NG/TCrS1HLkmwxtrJztS3nP6NvCWGi9VrVmeK9J+fFfHX4E5ApSxJb5qtXJSsUNlVmhWjMeQlFWC6jQliwb56MjMFve97z/L6q/Vq40hXI3jM/O9oPxor6Mmy6K+dFvbGDM1cdduUt/WrKVyk2qyyZppwX/aoObcQOa/oTenJenRfG/QY5EY6a9+S8PA+WxJyMjnmpJ+ez5n1JeXwrffTkfBJqE5vacpa6AauT0el+A5vqxzk09OS8qjfPq8ftVTSjLfvRfL9x5+9+0XvQH1YUh8NH9ZuBAAAAAElFTkSuQmCC" alt="LINE@ QR Code">手機掃描加好友</a>
+</div>
+<div class="sig"><b>顧問 陳芸琪 Angie Chen／財顧芸</b><br>家族傳承生活顧問・人生財務設計顧問｜AI 賦能應用<br>RFC 國際認證財務顧問師｜RFP 美國註冊財務策劃師｜RFA 退休理財規劃顧問</div>
+<div class="disc">本頁為課程介紹，不構成投資建議，也不代表任何商品之要約或承諾。AI 財務健診報告書依學員自行提供之資料彙整，經顧問核對後交付，僅供財務規劃參考；涉及法律、稅務之事項，請洽該領域專業人士。課程時間、地點與內容以正式公告為準。<br>財顧芸 陳芸琪｜馥芸財富學苑</div>
+</section>
+
+</div>
+</body></html>
